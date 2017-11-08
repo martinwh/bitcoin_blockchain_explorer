@@ -9,6 +9,10 @@
 // 
 // and so on. The methods will then be called from the controller class to create appropriate methods to simulate useful APIs to extract Bitcoin information from the blockchain
 
+// For this project I have just switched to Visual Studio Code becaue it looks similar to Brackets, but it allows us to integrated with GitHub.  
+// Here is a very simple YouTube video (https://www.youtube.com/watch?v=9cMWR-EGFuY)showing how to set up a repository on Githuba dn connect to it via Visual Studio Code
+// and, here is another Youtube video (https://www.youtube.com/watch?v=6n1G45kpU2o)showing how to do version control using Git in Visual Studio Code — Cool!
+
 //Create an model class for accessing external Bitcoin APIs
 class Model {
 	//create a new PDO object that represents a connection to a database
