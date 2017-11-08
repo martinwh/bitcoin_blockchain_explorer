@@ -9,11 +9,14 @@
 // 
 // and so on. The methods will then be called from the controller class to create appropriate methods to simulate useful APIs to extract Bitcoin information from the blockchain
 
+//Create an model class for accessing external Bitcoin APIs
 class Model {
 	//create a new PDO object that represents a connection to a database
 	// Property declaration, in this case we are declaring a variable that points to the database connection
 	public $dbhandle;
 	//method to create database connection using PHP data Objects (PDO) as the interface to SQLite
+	
+	// Create an a method to make an initial database connection to SQLite to use as local storage for Bitcoin data returned from Bitcoin APIs
 	public function __construct()
 	{
 		try {
@@ -28,7 +31,8 @@ class Model {
 			print new Exception($e->getMessage());
 		}
 	}
-	
+
+	// Create a method to write Bitcoin data to the local SQLite storage — this is just a test at the moment 
 	public function dbCreateBitcoinData()
 	{
 		try{
@@ -45,7 +49,8 @@ class Model {
 		}
 		$this->dbhandle = NULL;
 	}
-		
+	
+	// Create a method to read Bitcoin data form the SQLite local storage
 	public function dbReadBitcoinData()
 	{
 		try {
@@ -88,13 +93,15 @@ class Model {
 		//Send the response back to the view
 		return $result;
 	}
-    
+	
+	// Create a method to delete the Bitcoin data tabele — this will be useful to execute everyso offte to ensure we don't run out of local storage
     public function dbDelete() {
 		$this->dbhandle->exec("DROP TABLE bitcoin_data");
 		return "Bitcoin data table successfully deleted from inside bitcoin.sqlite file";
 	}
     
-    
+	// Create a method to get Bitocin data using third party Bitcoin APIs — this is just a simple clump of Bitcoiun APIs calls in one method.
+	// Future updates will separate out disctinct API calls into separate methods for access by the controller class
     public function apiReadBitcoinData()
 	{
 		try {
@@ -170,7 +177,7 @@ class Model {
 			print new Exception($e->getMessage());
 		}
 		
-		//Send the response back to the view
+		//Send the response back to the view via the controller class
 		return $result;
 
 	}
