@@ -26,11 +26,11 @@
 			</ul>
 		</div>
 	
-		<!-- Display selected Bitcoin information from Bitcoin exchnages and current current block -->
+		<!-- Display selected Bitcoin information from Bitcoin exchanges and current current block -->
 		<div id="information"> 
 			<h3 id="information_header">Blockchain Information</h3>  
 			<div id="information_body">
-				<!-- Grab lastes Bitcoin price from Bitfinex, Bitstamp and Coinbase exchanges -->
+				<!-- Grab lastest Bitcoin price from Bitfinex, Bitstamp and Coinbase exchanges -->
 				<p><div class="information_sub_heading">BitFinex Last Price: </div><div id="bitfinex_lp"></div></p>
 				<p><div class="information_sub_heading">Bitstamp Last Price: </div><div id="bitstamp_lp"></div></p>
 				<p><div class="information_sub_heading">Coinbase Last Price: </div><div id="coinbase_lp"></div></p>
