@@ -1,0 +1,263 @@
+/* CSS Rules for Lab 1 using Bootstrap.  Note, these rules are laid out non-mobile first.  
+	That is, the larger screen rules are shown first
+	For mobile first you need to swap the order and use min-width in the media queries
+	Check out: https://scotch.io/quick-tips/default-sizes-for-twitter-bootstraps-media-queries
+*/
+
+/* Method to declare your own fonts 
+@font-face {
+	font-family: cocaColaFont;
+	src: url(./lokicola.ttf);
+}
+*/
+        /* Some modifications (i.e. overwrite) to the bootstrap.css CSS rules */
+        .container {
+        /*    border: 1px solid red; */
+        }
+        body {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            background-color: #FFF;
+        }
+
+        /* CSS rules to design your own logo using the newly declared cocaColaFont. 
+            Note here we are using the h1, h2, h3 and p redefines for the logo font */
+        .logo h1 {
+            font-size: 40px;
+            margin-top: 10px;
+            float: left;
+            padding: 5px;
+        }
+        .logo h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+        }
+
+        h2.box_text_h2{
+            font-size: 30px;
+            color: #000;
+            margin: 10px;
+            margin-top: 20px;
+        }
+
+        h3.box_text_h3{
+            font-size: 20px;
+            color: #000;
+            margin: 10px;
+        }
+
+        p.box_text_p{
+            font-size: 12px;
+            line-height: 1.5;
+            color: #000;
+            margin: 10px;
+        }
+
+        /* New CSS rules to better position the navbar and increase its height, Bootstrap defaults tend to make your site 
+            look like a Bootstrap clone! */
+        .navbar .container { 
+            min-height: 120px; 
+        }
+
+        .navbar-fixed-top {
+            position: fixed; /* You could also try static, which allows the navbar disappear up */
+            margin-bottom: 10px;
+        }
+
+        /* CSS rule to inherit the Bootstrap default text color and remove decoration on a link — probably obsolete now, because I have made new CSS rules below? */
+        .navbar-text > a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* CSS rule to overwrite the navbar-brand font color  */
+        .navbar-default .navbar-brand {
+            color: #FFF;
+        }
+
+        /* CSS rule to overwrite the navbar-brand font hover color  */
+        .navbar-default .navbar-brand:hover {
+            color: green;
+        }
+
+        /* CSS rule to overwrite the navbar-default background and border color — again, helps to stop your site looking like a Bootstrap clone! */
+        .navbar-default {
+            background-color: #000; /* Sets the navbar background color */
+            border-color: yellow; /* Sets the navbar border color */
+            border-style: solid;
+            border-width: 0px;
+        }
+
+        /* Some simple CSS rules for styling p, h1 to h6, etc. in the main contents containers */
+        p {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* CSS rule to adjust the thumnail position relative to the Jumbotron */
+        .img-thumbnail{
+            margin-top: 10px;
+        }
+
+        .img-thumbnail > img{
+            width: 100%;
+        }
+
+        /* CSS rule to style the footer */
+        .footer {
+            color: #FFF;
+            margin-top: 30px;
+            background-color: #000;
+        }
+
+        /* CSS Styles for the video Jumbotron */
+        .jumbotron {
+            padding: 0;
+            margin-bottom: 0;
+        }
+        .videoControls {
+            width: 100%;
+            font-size: 30px;
+        }
+        .videoControls span, .videoControls div {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .btnBox {
+            float: right;
+        /*    border: 1px solid red; */
+        }
+        .btnDownload {
+            float: right;
+            margin-top: 10px;
+            color: #000;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .btnDownload:hover{
+            color: #aaa;
+            text-decoration: none;
+            border: 1px solid grey;
+        }
+        .btnMute {
+            float: right;
+            padding-left: 20px;
+            margin-right: 20px;
+            color: #000;
+        }
+        .btnFullscreen {
+            float: right;
+            padding-left: 20px;
+            margin-right: 20px;
+            color: #000;
+        }  
+        .btnPlay {
+            padding-right: 20px;
+            margin-left: 20px;
+            color: #000;
+        }
+        .glyphicon:hover {
+            color: #aaa;
+        }
+        .videoTime {
+            color: #000;
+        }
+        /* END CSS Styles for the video Jumbotron */
+        
+        /* Overide X3D CSS Styles for the 3D Model */ 
+        X3D, x3d {
+            background-color: rgba(255,255,255,0.6);
+            width: 100%;
+            height: 900px;
+            border-radius: 0px;
+            border: 0px solid red; */
+        }
+        #model3d {
+            background-image: url(../assets/images/image_4.jpg);
+            background-size: cover;
+            clear: none;
+            float: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            width: 100%;
+            padding: 0px;
+        /*  border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgba(245,245,245,.8); */
+            display: block;
+        }   
+        /* END Overide X3D CSS Styles for the 3D Model*/
+
+        .textBox {
+            margin-bottom: 10px;
+            float: left;
+        /*    border: 1px solid red; */
+        }
+
+
+@media only screen and (max-width:768px) {
+        body {
+            padding-top: 100px;
+        }
+        .navbar .container { 
+            min-height: 90px; 
+        }
+
+        .navbar .nav > li > a {
+            margin-top: 5px;
+            padding: 10px 15px 0px; /* Need to sort this padding for the collapse menu */
+            font-size: 12px;
+        }
+
+        .logo h1 {
+            font-size: 35px;
+            margin: 0;
+            margin-top: 10px;
+            float: left;
+            padding-top: 0px;
+            padding-left: 0px;
+            padding-right: 2px;
+        }
+
+}
+
+@media only screen and (max-width:480px) {
+        body {
+            padding-top: 120px;
+        }
+        .navbar .container { 
+            min-height: 80px; 
+        }
+
+        .navbar .nav > li > a {
+            margin-top: 5px;
+            padding: 10px 15px 0px; /* Need to sort this padding for the collapse menu */
+            font-size: 12px;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+            margin: 0;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            float: left;
+            padding-top: 0px;
+            padding-left: 0px;
+            padding-right: 2px;
+        }
+
+}
+
+
+
+
+
+  

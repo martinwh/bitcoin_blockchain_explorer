@@ -1,0 +1,68 @@
+{
+    "pageTextData": [
+            {
+                  "title": " ",
+                  "subTitle": "Bitfinex Bitcoin Exchange",		
+                  "description": "Bitfinex Latest Bitcoin Price:",
+                  "imageUrl": "../assets/images/image_1.png"
+		},
+		{
+                  "title": " ",
+                  "subTitle": "Bitstamp Bitcoin Exchange",		
+                  "description": "Bitstamp Latest Bitcoin Price:",
+                  "imageUrl": "../assets/images/image_2.jpg"
+		},
+		{
+                  "title": " ",
+                  "subTitle": "Coinbase Bitcoin Exchange",		
+                  "description": "Coinbase Latest Bitcoin Price:",
+                  "imageUrl": "../assets/images/image_3.png"
+		},
+            {
+                  "title": " ",
+                  "subTitle": "Current Block Height",		
+                  "description": "This is the last block in the bitcoin blockchain:",
+                  "imageUrl": "../assets/images/image_4.jpg"
+            },
+            {
+                  "title": " ",
+                  "subTitle": "Bits Transacted in this Block",		
+                  "description": "This is the number of bits transacted in the last bitcoin block",
+                  "imageUrl": "../assets/images/image_5.jpg"
+            },
+            {
+                  "title": " ",
+                  "subTitle": "Miner Address in this Block",		
+                  "description": "This is the address of the miner that validated this bitcoin transaction",
+                  "imageUrl": "../assets/images/image_6.jpg"
+            },
+            {
+                  "title": " ",
+                  "subTitle": "Amount Received at this Miner Address",		
+                  "description": "This is the amount of Satoshi's held by the miner at this address",
+                  "imageUrl": "../assets/images/image_7.jpg"
+		},
+		{
+                  "title": " ",
+                  "subTitle": "Total Bitcoins at this Miner Address",		
+                  "description": "This is the total value of bitcoins held by this miner at this address",
+                  "imageUrl": "../assets/images/image_8.jpg"
+            },
+            {
+                  "title": " ",
+                  "subTitle": "Bitcoin unconfirmed transaction values in real-time",		
+                  "description": "This is a real-time stream of latest bitcoin transaction values accessed using the bitcoin.info Websocket",
+                  "imageUrl": "../assets/images/image_8.jpg"
+            },
+            {
+                  "section_1": "Blockchain — Bitcoin Last Price Information (Exchange APIs)",
+                  "section_2": "Blockchain — Bitcoin Current Block Information (Blockchain.info APIs)",
+                  "section_3": "Blockchain — Bitcoin Current Block Information (Blockchain.info Websocket)",
+                  "section_4": "Blockchain — Bitcoin Blockchain Explorer (Webchain API)"
+            },
+            {
+                  "name": "Dr Martin White",
+                  "email": "m.white@sussex.ac.uk"		
+		}
+	]
+}

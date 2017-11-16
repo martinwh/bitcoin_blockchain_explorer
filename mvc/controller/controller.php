@@ -23,6 +23,13 @@ class Controller {
 	{
 		$this->load->view('explorer');
 	}
+
+	function explorer_2()
+	{
+		$this->load->view('explorer_2');
+	}
+
+
 	
 	function getBitcoinJSON()
 	{
