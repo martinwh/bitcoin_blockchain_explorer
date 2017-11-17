@@ -58,7 +58,7 @@
             <a class="navbar-brand" href="#"><h1>Exploring Blockchain Transactions</h1></a>
           </div>
           <div class="logo">
-            <a class="navbar-brand" href="#"><h2>An Exploration of Bitcoin APIs and Web Sockets</h2></a>
+            <a class="navbar-brand" href="#"><h2>An API and web socket approach to visualizing bitcoin blockchain transactions </h2></a>
           </div>
         </div> 
       </div>
@@ -88,40 +88,69 @@
           <!-- Use the class="collapse in" to open the block in load -->
           <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="card-block">
-              
               <div class="row">
-                <!-- Insert the first required asset, in this case the first image required for the Part 1 assignment -->
-                <div class="col-sm-4">
+                <div class="col-sm-4" style="background-color:lightgrey;">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
                   <!-- <img class="img-thumbnail" id="1" data-toggle="modal" data-target="#myModal" src="assets/images/image_1.jpg" alt="Part 1 WIP Image 1"> -->
                   <div id="image_0" style="border:none" >Media object will insert here</div>
-                  
-                  <!-- Create title, subtitle and short descriptions as required -->
-                  <div class="title_0"></div> 
-                  <div class="subTitle_0"></div>      
-               	  <div class="description_0"></div>
-                  <!-- <a href="#" class="btn btn-danger">Download</a> --> 
-                </div>
-
-                <div class="col-sm-4">
+                </div> <!-- End column -->
+                <div class="col-sm-4" style="background-color:lightgrey;">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
                   <div id="image_1" style="border:none" >Media object will insert here</div>
-                  <div class="title_1"></div> 
-                  <div class="subTitle_1"></div>       
-               	  <div class="description_1"></div>  
-                  <!-- <a href="#" class="btn btn-danger">Download</a> -->
-                </div>
-
-                <div class="col-sm-4">
+                </div> <!-- End column -->
+                <div class="col-sm-4" style="background-color:lightgrey;">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
                   <div id="image_2" style="border:none" >Media object will insert here</div>
-                  <div class="subTitle_2"></div>        
-                  <div class="description_2"></div>  
-                  <!-- <a href="#" class="btn btn-danger">Download</a> -->
-                </div>
+                </div> <!-- End column -->
+              </div> <!--End image row -->             
+            
+              <div class="row">
+                <div class="col-sm-4" style="background-color:lavender;">
+                    <!-- Create title, subtitle and short descriptions as required -->
+                    <div class="title_0"></div> 
+                    <div class="subTitle_0"></div> 
+                    <div class="row"> 
+                        <div class="col-sm-8" style="background-color:lightcyan;"> 
+                            <div class="description_0"></div>
+                        </div>
+                        <div class="col-sm-4" style="background-color:lightgray;"> 
+                            <div id="bitfinex_lp"></div>
+                            <!-- <a href="#" class="btn btn-danger">Download</a> --> 
+                        </div>
+                    </div> <!-- end row -->
+                </div> <!-- end column -->
                 
-   
-              </div> <!-- end the row -->
+                <div class="col-sm-4" style="background-color:lavender;">
+                    <!-- Create title, subtitle and short descriptions as required -->
+                    <div class="title_1"></div> 
+                    <div class="subTitle_1"></div>  
+                    <div class="row"> 
+                        <div class="col-sm-8" style="background-color:lightcyan;">      
+                            <div class="description_1"></div>  
+                        </div>
+                        <div class="col-sm-4" style="background-color:lightgray;">      
+                            <div id="bitstamp_lp"></div>
+                            <!-- <a href="#" class="btn btn-danger">Download</a> -->
+                        </div>
+                    </div>
+                </div> <!-- end column -->
+                
+                <div class="col-sm-4" style="background-color:lavender;">
+                    <!-- Create title, subtitle and short descriptions as required -->
+                    <div class="title_2"></div> 
+                    <div class="subTitle_2"></div>  
+                    <div class="row">
+                        <div class="col-sm-8" style="background-color:lightcyan;">     
+                            <div class="description_2"></div> 
+                        </div>
+                        <div class="col-sm-4" style="background-color:lightgray;">     
+                          <div id="coinbase_lp"></div> 
+                            <!-- <a href="#" class="btn btn-danger">Download</a> -->
+                        </div>
+                  </div>
+                </div> <!-- end column -->
+              </div> <!-- end title and sub-title row -->   
+
             </div> <!-- end the panel body -->
           </div> <!-- end the panel collapse -->
       </div> <!-- end the card -->
@@ -139,48 +168,53 @@
 
               <div class="row">               
                 
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
                   <div id="image_3" style="border:none" >Media object will insert here</div>
                   <div class="title_3"></div>
                   <div class="subTitle_3"></div>        
-               	  <div class="description_3"></div>  
+                  <div class="description_3"></div>
+                  <div id="current_block_height"></div>
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div> 
 
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
                   <div id="image_4" style="border:none" >Media object will insert here</div>
                   <div class="title_4"></div>
                   <div class="subTitle_4"></div>        
                   <div class="description_4"></div>  
+                  <div id="bits_transacted"></div>
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
                   <div id="image_5" style="border:none" >Media object will insert here</div>
                   <div class="title_5"></div> 
                   <div class="subTitle_5"></div>        
-                  <div class="description_5"></div>  
+                  <div class="description_5"></div> 
+                  <div id="miner_address"></div>
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div>
                 
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
                   <div id="image_6" style="border:none" >Media object will insert here</div>
                   <div class="title_6"></div> 
                   <div class="subTitle_6"></div>        
-                  <div class="description_6"></div>  
+                  <div class="description_6"></div>
+                  <div id="amount"></div>
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div>
                 
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
                   <div id="image_7" style="border:none" >Media object will insert here</div>
                   <div class="title_7"></div>
                   <div class="subTitle_7"></div>        
-                  <div class="description_7"></div>  
+                  <div class="description_7"></div> 
+                  <div id="total_bitcoins"></div>
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div>
               </div> <!-- end the row -->

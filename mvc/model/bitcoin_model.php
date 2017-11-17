@@ -40,8 +40,13 @@ echo "</p><p>";
 $Bitstamp_Url = "https://www.bitstamp.net/api/ticker/";
 $json = json_decode(file_get_contents($Bitstamp_Url), true);
 $priceBitstamp = $json["last"];
-echo "<b>Bitstamp Last Price</b>: ";
+$timeStamp = $json["timestamp"];
+echo "<b>Bitstamp Last Price was:</b> $";
 echo $priceBitstamp;
+echo "<b> on the </b> ";
+echo date ('m/d/Y', $timeStamp);
+echo "<b> at </b> ";
+echo date ('H:i:s', $timeStamp);
 echo "</p><p>";
 
 // Get the latest Bitcoin price from Coinbase

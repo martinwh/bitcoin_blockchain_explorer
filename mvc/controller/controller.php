@@ -19,18 +19,16 @@ class Controller {
 		$this->load->view('home');
 	}
 
-	function explorer()
+	function bcExplorerDw()
 	{
-		$this->load->view('explorer');
+		$this->load->view('bcExplorerDw');
 	}
 
-	function explorer_2()
+	function bcExplorerBs()
 	{
-		$this->load->view('explorer_2');
+		$this->load->view('bcExplorerBs');
 	}
 
-
-	
 	function getBitcoinJSON()
 	{
 		$data = $this->model->dbReadBitcoinData();
@@ -43,9 +41,19 @@ class Controller {
 		$this->load->view('view_simple_message',$data);
 	}
 
-	function dbReadBitcoinData()
+	// This method is not needed, it simply calls the getBitcoiunJSON method, which calls
+	// the PHP dbReadBitcoinData method in te model and echos the data.
+	function displayBitcoinData()
 	{
 		$this->load->view('view_simple_message', $this->getBitcoinJSON());
+	}
+
+	// This method calls the PHP dbReadBitcoinData method in the model and echos the data
+	// to the JQuery AJAX function
+	function dbReadBitcoinData()
+	{
+		$data = $this->model->dbReadBitcoinData();
+		echo json_encode($data);
 	}
 	
 	function dbDelete()

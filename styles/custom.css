@@ -41,13 +41,19 @@
             font-size: 30px;
             color: #000;
             margin: 10px;
-            margin-top: 20px;
         }
 
         h3.box_text_h3{
-            font-size: 20px;
+            font-size: 25px;
             color: #000;
             margin: 10px;
+        }
+
+        h4.box_text_h4{
+            font-size: 15px;
+            color: #000;
+            margin: 10px;
+            float: left;
         }
 
         p.box_text_p{
@@ -55,6 +61,8 @@
             line-height: 1.5;
             color: #000;
             margin: 10px;
+            float: left;
+            /* border: 1px solid red; */
         }
 
         /* New CSS rules to better position the navbar and increase its height, Bootstrap defaults tend to make your site 
@@ -117,89 +125,10 @@
             background-color: #000;
         }
 
-        /* CSS Styles for the video Jumbotron */
-        .jumbotron {
-            padding: 0;
-            margin-bottom: 0;
-        }
-        .videoControls {
-            width: 100%;
-            font-size: 30px;
-        }
-        .videoControls span, .videoControls div {
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-        .btnBox {
-            float: right;
-        /*    border: 1px solid red; */
-        }
-        .btnDownload {
-            float: right;
-            margin-top: 10px;
-            color: #000;
-            border: 1px solid black;
-            border-radius: 5px;
-            padding: 5px;
-        }
-        .btnDownload:hover{
-            color: #aaa;
-            text-decoration: none;
-            border: 1px solid grey;
-        }
-        .btnMute {
-            float: right;
-            padding-left: 20px;
-            margin-right: 20px;
-            color: #000;
-        }
-        .btnFullscreen {
-            float: right;
-            padding-left: 20px;
-            margin-right: 20px;
-            color: #000;
-        }  
-        .btnPlay {
-            padding-right: 20px;
-            margin-left: 20px;
-            color: #000;
-        }
-        .glyphicon:hover {
-            color: #aaa;
-        }
-        .videoTime {
-            color: #000;
-        }
-        /* END CSS Styles for the video Jumbotron */
-        
-        /* Overide X3D CSS Styles for the 3D Model */ 
-        X3D, x3d {
-            background-color: rgba(255,255,255,0.6);
-            width: 100%;
-            height: 900px;
-            border-radius: 0px;
-            border: 0px solid red; */
-        }
-        #model3d {
-            background-image: url(../assets/images/image_4.jpg);
-            background-size: cover;
-            clear: none;
-            float: left;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            width: 100%;
-            padding: 0px;
-        /*  border: 1px solid black;
-            border-radius: 5px;
-            background-color: rgba(245,245,245,.8); */
-            display: block;
-        }   
-        /* END Overide X3D CSS Styles for the 3D Model*/
-
         .textBox {
             margin-bottom: 10px;
             float: left;
-        /*    border: 1px solid red; */
+            /* border: 1px solid red; */
         }
 
 

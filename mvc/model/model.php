@@ -116,7 +116,7 @@ class Model {
             // Get the latest Bitcoin price from Bitfinex
             $Bitfinex_Url = "https://api.bitfinex.com/v1/ticker/btcusd";
             $json = json_decode(file_get_contents($Bitfinex_Url), true);
-            $priceBitfinex = $json["last_price"];
+			$priceBitfinex = $json["last_price"];
 
             // Get the latest Bitcoin price from Bitstamp
             $Bitstamp_Url = "https://www.bitstamp.net/api/ticker/";
