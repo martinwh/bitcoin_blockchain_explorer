@@ -21,8 +21,8 @@
 		<h1>Blockchain Explorer</h1>
 			<ul>
                 <li><a href="../index.php/home">HOME</a></li>
-				<li><a href="#">BITCOIN</a></li>
-				<li><a href="#">ETHER</a></li>
+                <li><a href="../index.php/bcexplorerdw">BITCOIN_DW</a></li>
+                <li><a href="../index.php/bcexplorerbs">BITCOIN_BS</a></li>
 			</ul>
 		</div>
 	
@@ -34,7 +34,8 @@
 				<p><div class="information_sub_heading">BitFinex Last Price: </div><div id="bitfinex_lp"></div></p>
 				<p><div class="information_sub_heading">Bitstamp Last Price: </div><div id="bitstamp_lp"></div></p>
 				<p><div class="information_sub_heading">Coinbase Last Price: </div><div id="coinbase_lp"></div></p>
-				<!-- Get current block height, bits transacted at this block, miner address who validated this block, current value of Satoshi for this miner, and Bitcoin value for this miner -->
+				<!-- Get current block height, bits transacted at this block, miner address who validated this block, 
+				current value of Satoshi for this miner, and Bitcoin value for this miner -->
 				<p><div class="information_sub_heading">Current Block Height: </div><div id="current_block_height"></div></p>
 				<p><div class="information_sub_heading">Bits Transacted in this Block: </div><div id="bits_transacted"></div></p>
 				<p><div class="information_sub_heading">Miner Address in this Block: </div><div id="miner_address"></div></p>

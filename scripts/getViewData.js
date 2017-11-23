@@ -62,10 +62,18 @@ $(document).ready(function (){
         $('#image_8').html('<img class="img-thumbnail" id="1" data-toggle="modal" data-target="#myModal" src="' + jsonObj.pageTextData[8].imageUrl + '" alt=" WIP Image 8"/>');
 
 		// Get the section titles
+		// Blockchain — A simple JavaScript blockchain tutorial
 		$('.section_1').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_1 + '</h2>');
+		// Blockchain — A simple JavaScript blockchain tutorial
 		$('.section_2').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_2 + '</h2>');
+		// Blockchain — Explore bitcoin exchange APIs tutorial
 		$('.section_3').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_3 + '</h2>');
+		// Blockchain — Explore the bitcoin blockchain with APIs
 		$('.section_4').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_4 + '</h2>');
+		// Blockchain — Explore the bitcoin blockchain with WebSockets
+		$('.section_5').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_5 + '</h2>');
+		// Blockchain — Build a simple blockchain explorer tutorial
+		$('.section_6').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_6 + '</h2>');
 		
 		// Get the Assignment footer information, name, candidate number and statement of orginality
 		$('.name').html('<p class="p.box_text_p">' + jsonObj.pageTextData[10].name + '</p>');

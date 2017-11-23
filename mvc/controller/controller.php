@@ -3,7 +3,7 @@
 class Controller {
 	public $load;
 	public $model;
-	// Create functions for the controller class
+	// Create functions (methods) for the controller class
 	function __construct($pageURI = null) // contructor of the class
 	{
 		//echo $pageURI;
@@ -19,26 +19,56 @@ class Controller {
 		$this->load->view('home');
 	}
 
-	function bcExplorerDw()
+	// Put more controller methods here
+	// Method to create some test bitcoin data in the DB
+	function dbCreateBitcoinData()
 	{
-		$this->load->view('bcExplorerDw');
+		//echo "Create table in database for test bitcoin data";
+		$data = $this->model->dbCreateBitcoinData();
+		$this->load->view('view_simple_message',$data);
 	}
-
-	function bcExplorerBs()
+	
+	// Method to read the bitcoin data from the DB
+	function dbReadBitcoinData()
 	{
-		$this->load->view('bcExplorerBs');
+		//echo "Read test bitcoin data for database table";
+		$data = $this->model->dbReadBitcoinData();
+		echo json_encode($data);
 	}
-
+	
+	// Method to delte (drop) the bitcoin data from the DB
+	function dbDelete()
+	{
+		//echo "delete test bitcoin data, i.e. drop the table";
+		$data = $this->model->dbDelete();
+		$this->load->view('view_simple_message',$data);
+	}
+	
+	// Method to read bitcoin data from the DB
 	function getBitcoinJSON()
 	{
 		$data = $this->model->dbReadBitcoinData();
 		echo json_encode($data);
 	}
 	
-	function dbCreateBitcoinData()
+    // Method to read bitcoin data from third party APIs
+    function apiReadBitcoinData()
 	{
-		$data = $this->model->dbCreateBitcoinData();
-		$this->load->view('view_simple_message',$data);
+		$data = $this->model->apiReadBitcoinData();
+		echo json_encode($data);
+	}
+	
+	// Controller methods to connect to various views
+	// Method to use view with Bootsrap
+	function bcExplorerBs()
+	{
+		$this->load->view('bcExplorerBs');
+	}
+
+	// Alternative view using Dreamweaver's grid system
+	function bcExplorerDw()
+	{
+		$this->load->view('bcExplorerDw');
 	}
 
 	// This method is not needed, it simply calls the getBitcoiunJSON method, which calls
@@ -46,26 +76,6 @@ class Controller {
 	function displayBitcoinData()
 	{
 		$this->load->view('view_simple_message', $this->getBitcoinJSON());
-	}
-
-	// This method calls the PHP dbReadBitcoinData method in the model and echos the data
-	// to the JQuery AJAX function
-	function dbReadBitcoinData()
-	{
-		$data = $this->model->dbReadBitcoinData();
-		echo json_encode($data);
-	}
-	
-	function dbDelete()
-	{
-		$data = $this->model->dbDelete();
-		$this->load->view('view_simple_message',$data);
-	}
-    
-    function apiReadBitcoinData()
-	{
-		$data = $this->model->apiReadBitcoinData();
-		echo json_encode($data);
 	}
     
 }

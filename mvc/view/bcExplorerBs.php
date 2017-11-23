@@ -55,10 +55,10 @@
             <span class="icon-bar"></span>
           </button> -->
           <div class="logo">
-            <a class="navbar-brand" href="#"><h1>Exploring Blockchain Transactions</h1></a>
+            <a class="navbar-brand" href="#"><h1>Visualising Blockchain Transactions</h1></a>
           </div>
           <div class="logo">
-            <a class="navbar-brand" href="#"><h2>An API and web socket approach to visualizing bitcoin blockchain transactions </h2></a>
+            <a class="navbar-brand" href="#"><h2>An API and WebSocket approach to Exploring the Bitcoin Blockchain </h2></a>
           </div>
         </div> 
       </div>
@@ -72,6 +72,51 @@
     <div id="accordion" role="tablist" aria-multiselectable="true">   
       
       <!-- Topics in Computer Science: Exploring the Bitcoin Blockchain-->
+      <!-- Set up a collapsible card presenting a MVC framework exmample--> 
+      <div class="card">
+        <div class="card-header" role="tab" id="headingTwo">
+            <div class="mb-0">
+              <div class="section_1" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1"></div>
+            </div>
+        </div>
+
+        <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="card-block">
+
+            <div class="row">               
+              
+              <div class="col-sm-4">
+                <!-- Insert HTML for the view for the JavaScript blockcchain tutorial -->
+                <h5>Select the Deamweaver BITCOIN_DW View</h5>
+                <a href="../index.php/bcexplorerdw" class="btn btn-danger">BITCOIN_DW</a></li>
+              </div> 
+            </div> <!-- end the row -->
+          </div> <!-- end the card block -->
+        </div> <!-- end the card collapse -->
+      </div> <!-- end the card-->
+
+      <!-- Set up a collapsible card presenting a simple JavaScript blockchain example--> 
+      <div class="card">
+        <div class="card-header" role="tab" id="headingTwo">
+            <div class="mb-0">
+              <div class="section_2" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2"></div>
+            </div>
+        </div>
+
+        <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="card-block">
+
+            <div class="row">               
+              
+              <div class="col-sm-4">
+                <!-- Insert HTML for the view for the JavaScript blockcchain tutorial -->
+              </div> 
+
+            </div> <!-- end the row -->
+          </div> <!-- end the card block -->
+        </div> <!-- end the card collapse -->
+      </div> <!-- end the card-->
+      
       <!-- Set up a collapsible card presenting Bitcoin echange rates --> 
       <div class="card">
           <div class="card-header" role="tab" id="headingOne">
@@ -81,12 +126,12 @@
                      2) We also appear to be able to just use the a href to target the div collapse, but this might not be pucker, although it works also wth a p, and other element?
                      3) Use the data-target attribute, which is simple and non-controvertial, I think?
                  -->
-                <div class="section_1" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1"></div> 
+                <div class="section_3" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3"></div> 
               </div>
           </div>
 
           <!-- Use the class="collapse in" to open the block in load -->
-          <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="card-block">
               <div class="row">
                 <div class="col-sm-4" style="background-color:lightgrey;">
@@ -159,11 +204,11 @@
       <div class="card">
           <div class="card-header" role="tab" id="headingTwo">
               <div class="mb-0">
-                <div class="section_2" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2"></div>
+                <div class="section_4" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4"></div>
               </div>
           </div>
 
-          <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="card-block">
 
               <div class="row">               
@@ -226,11 +271,11 @@
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
             <div class="mb-0">
-              <div class="section_3" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" aria-expanded="false" aria-controls="collapse2"></div>
+              <div class="section_5" data-toggle="collapse" data-parent="#accordion" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5"></div>
             </div>
         </div>
 
-        <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="card-block">
 
             <div class="row">               
@@ -254,11 +299,11 @@
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
             <div class="mb-0">
-              <div class="section_4" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4" aria-expanded="false" aria-controls="collapse2"></div>
+              <div class="section_6" data-toggle="collapse" data-parent="#accordion" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6"></div>
             </div>
         </div>
 
-        <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="card-block">
 
             <div class="row">               

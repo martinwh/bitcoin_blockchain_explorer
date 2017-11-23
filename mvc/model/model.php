@@ -9,11 +9,11 @@
 // 
 // and so on. The methods will then be called from the controller class to create appropriate methods to simulate useful APIs to extract Bitcoin information from the blockchain
 
-// For this project I have just switched to Visual Studio Code becaue it looks similar to Brackets, but it allows us to integrated with GitHub.  
+// For this project I have just switched to Visual Studio Code because it looks similar to Brackets, but it allows us to integrated with GitHub.  
 // Here is a very simple YouTube video (https://www.youtube.com/watch?v=9cMWR-EGFuY)showing how to set up a repository on Githuba dn connect to it via Visual Studio Code
 // and, here is another Youtube video (https://www.youtube.com/watch?v=6n1G45kpU2o)showing how to do version control using Git in Visual Studio Code — Cool!
 
-//Create an model class for accessing external Bitcoin APIs
+//Create a model class for accessing a SQLite database and Bitcoin APIs
 class Model {
 	//create a new PDO object that represents a connection to a database
 	// Property declaration, in this case we are declaring a variable that points to the database connection
@@ -23,9 +23,12 @@ class Model {
 	// Create an a method to make an initial database connection to SQLite to use as local storage for Bitcoin data returned from Bitcoin APIs
 	public function __construct()
 	{
+		$dsn = 'sqlite:./mvc/model/db/bitcoin.sqlite';
+		$user = 'user';
+		$password = 'password';
 		try {
 			//Change connection string for different databases, currently using SQLite
-			$this->dbhandle = new PDO('sqlite:./mvc/model/db/bitcoin.sqlite', 'user', 'password', array(
+			$this->dbhandle = new PDO($dsn, $user, $password, array(
 														PDO::ATTR_ERRMODE=> PDO::ERRMODE_EXCEPTION,
 														PDO::ATTR_EMULATE_PREPARES=> false,
 														));
@@ -40,10 +43,25 @@ class Model {
 	public function dbCreateBitcoinData()
 	{
 		try{
-			$this->dbhandle->exec("CREATE TABLE bitcoin_data (id INTEGER PRIMARY KEY, bitfinex_lp REAL, bitstamp_lp REAL, coinbase_lp REAL, current_block_height INTEGER, bits_transacted INTEGER, miner_address TEXT, amount INTEGER, total_bitcoins REAL)"); 
-			$this->dbhandle->exec(
-			
-				"INSERT INTO bitcoin_data (id, bitfinex_lp, bitstamp_lp, coinbase_lp, current_block_height, bits_transacted, miner_address, amount, total_bitcoins) 
+			$this->dbhandle->exec("CREATE TABLE bitcoin_data
+									(id INTEGER PRIMARY KEY,
+									bitfinex_lp REAL, 
+									bitstamp_lp REAL,
+									coinbase_lp REAL,
+									current_block_height INTEGER,
+									bits_transacted INTEGER,
+									miner_address TEXT,
+									amount INTEGER,
+									total_bitcoins REAL)"); 
+			$this->dbhandle->exec("INSERT INTO bitcoin_data
+									(id, bitfinex_lp,
+									bitstamp_lp,
+									coinbase_lp,
+									current_block_height,
+									bits_transacted,
+									miner_address,
+									amount,
+									total_bitcoins) 
 				VALUES (0, '5655.40', '5665.00', '5688.00', '491472', '402713392', '1Hz96kJKF2HLPGY15JWLB5m9qGNxvt8tHJ', '6043155289569', '60,431.55');"
 			);
 			return "Data inserted successfully inside bitcoin.sqlite file"; 
@@ -59,7 +77,7 @@ class Model {
 	{
 		try {
 		
-			//Get the database as an object
+			//Get the database as an object using a prepared statement
 			$sql = 'SELECT * FROM bitcoin_data';
 			$stmt = $this->dbhandle->query($sql);
 					
@@ -98,7 +116,8 @@ class Model {
 		return $result;
 	}
 	
-	// Create a method to delete the Bitcoin data tabele — this will be useful to execute everyso offte to ensure we don't run out of local storage
+	// Create a method to delete the Bitcoin data tabele — this will be useful to execute
+	// every so often to ensure we don't run out of local storage
     public function dbDelete() {
 		$this->dbhandle->exec("DROP TABLE bitcoin_data");
 		return "Bitcoin data table successfully deleted from inside bitcoin.sqlite file";

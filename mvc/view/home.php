@@ -20,7 +20,8 @@
             <h1>Blockchain Explorer</h1>
             <ul>
                 <li><a href="#">HOME</a></li>
-                <li><a href="../index.php/bcexplorerdw">EXPLORE</a></li>
+                <li><a href="../index.php/bcexplorerdw">BITCOIN_DW</a></li>
+                <li><a href="../index.php/bcexplorerbs">BITCOIN_BS</a></li>
             </ul>
         </div>
       

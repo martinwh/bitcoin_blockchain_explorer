@@ -55,10 +55,12 @@
                   "imageUrl": "../assets/images/image_8.jpg"
             },
             {
-                  "section_1": "Blockchain — Bitcoin Last Price Information (Exchange APIs)",
-                  "section_2": "Blockchain — Bitcoin Current Block Information (Blockchain.info APIs)",
-                  "section_3": "Blockchain — Bitcoin Current Block Information (Blockchain.info Websocket)",
-                  "section_4": "Blockchain — Bitcoin Blockchain Explorer (Webchain API)"
+                  "section_1": "Blockchain Tutorial 1 — Build a MVC Framework to Explore the Bitcoin Blockchain",
+                  "section_2": "Blockchain Tutorial 2 — Build a Simple Blockchain in JavaScript",
+                  "section_3": "Blockchain Tutorial 3 — Explore a Bitcoin Currency Exchange with API Endpoints",
+                  "section_4": "Blockchain Tutorial 4 — Explore the Bitcoin Blockchain with API Endpoints",
+                  "section_5": "Blockchain Tutorial 5 — Explore the Bitcoin Blockchain with WebSockets",
+                  "section_6": "Blockchain Tutorial 6 — Build a Simple Blockchain Explorer with the Webchain API"
             },
             {
                   "name": "Dr Martin White",
