@@ -13,7 +13,7 @@ $(document).ready(function() {
 	function update(objID) {	
 	
  		//Read the JSON file as an AJAX request 
-		$.getJSON(url3, function(jsonObj) {
+		$.getJSON(url1, function(jsonObj) {
 		console.log(jsonObj);
 			//Assign the AJAX requested data in to appropriate <div> tag wrapped in HTML
 			//Start by making AJAX request for the selected object name and its description
