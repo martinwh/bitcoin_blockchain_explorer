@@ -13,14 +13,30 @@ class Block{
         this.previoushash = previoushash;
         // We also need to calculate the hash of the current block
         this.hash = this.calculateHash();
+        this.nonce = 0;
     }
 
     // Method to claaculate the has of the current block on the blockchain
     calculateHash(){
         // Note, we are accessing the constructor index, previoushas, timestamp and data values
         // We are also converting the javaScript data to a JSON string, and casting the hash result to a string.
-        return SHA256(this.index + this.previoushash + this.timestamp + JSON.stringify(this.data)).toString();
+        return SHA256(this.index + this.previoushash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
     }
+
+    // Method to mine a block by computing the hash value that matchses the requirequred difficulty level
+    mineBlock(difficulty){
+        //We need a while loop to continue computing the hash value until we find a value that has th e required
+        // number of leading zeros
+        while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
+            this.nonce++;
+            this.hash = this.calculateHash();
+        }
+
+        
+        console.log("Block mined: " + this.hash);
+
+    }
+
 
 }
 
@@ -30,6 +46,8 @@ class Blockchain {
     constructor(){
         // Create an array of blocks
         this.chain = [this.createGenesisBlock()];
+        // Set a difficulty level
+        this.difficulty = 5;
     }
 
     // Method to create the first block in the blockchain, i.e. the Gnesis block
@@ -50,8 +68,10 @@ class Blockchain {
     addBlock(newBlock){
         // Need to find the previousHash of the previous block, so use the getLatestBlock() method
         newBlock.previousHash = this.getLatestBlock().hash;
-        // Calculate the new block's hash
-        newBlock.hash = newBlock.calculateHash();
+        // Calculate the new block's hash — Part 1 of Blockchain Turorial 2
+        // newBlock.hash = newBlock.calculateHash();
+        // Calculate the mined block — Part 2 of Blockchain Turorial 2
+        newBlock.mineBlock(this.difficulty);
         // And, add the new block to the blockchain
         this.chain.push(newBlock);
     }
@@ -85,24 +105,31 @@ class Blockchain {
 
     // Instantiate the new blockchain using the Blockchain class, call it myBitcoin 
     let myBitcoin = new Blockchain();
+    
     // Add a couple of blocks to the blockchain
+    console.log("Mining block 1 ...");
     myBitcoin.addBlock(new Block(1, "10/07/2017", { amount: 4}));
+    
+    console.log("Mining block 2 ...");
     myBitcoin.addBlock(new Block(2, "12/07/2017", { amount: 10}));
 
+    
+    
+    
     // Test the isChainValid() method
-    console.log('Is blockchain valid? ' + myBitcoin.isChainValid());
+    //console.log('Is blockchain valid? ' + myBitcoin.isChainValid());
 
     // Tamper with block 2 by overwriting the data, e.g. transfer 100 coins, make ourselves rich!
-    myBitcoin.chain[1].data = { amount: 100 };
+    //myBitcoin.chain[1].data = { amount: 100 };
     // Just tampering with block 2 by overwriting the data didn't work, we got rumbled,
     // so let's recalculate and inject a new hash value!
-    myBitcoin.chain[1].hash = myBitcoin.chain[1].calculateHash();
+    //myBitcoin.chain[1].hash = myBitcoin.chain[1].calculateHash();
 
     // Test the isChainValid() method, again
-    console.log('Is blockchain valid? ' + myBitcoin.isChainValid());
+    //console.log('Is blockchain valid? ' + myBitcoin.isChainValid());
    
     // View the result as a JSON string using console.log() in JSON format
-    console.log(JSON.stringify(myBitcoin, null, 4));
+    //console.log(JSON.stringify(myBitcoin, null, 4));
 
 
 
