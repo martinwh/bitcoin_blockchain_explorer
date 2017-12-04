@@ -21,18 +21,21 @@ class Block{
         // Note, we are accessing the constructor index, previoushas, timestamp and data values
         // We are also converting the javaScript data to a JSON string, and casting the hash result to a string.
         return SHA256(this.index + this.previoushash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
+        
     }
 
     // Method to mine a block by computing the hash value that matchses the requirequred difficulty level
     mineBlock(difficulty){
-        //We need a while loop to continue computing the hash value until we find a value that has th e required
-        // number of leading zeros
+        // We need a while loop to continue computing the hash value until we find a value that has the required
+        // number of leading zeros. To do this we keep loopong while the leading hash value characters from 0 to difficulty
+        // are not zeros
         while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
+            // Increment the nonce value to create a new randim number each time we loop
             this.nonce++;
+            // Calculate the hash of the current block being mined
             this.hash = this.calculateHash();
         }
 
-        
         console.log("Block mined: " + this.hash);
 
     }
@@ -112,7 +115,6 @@ class Blockchain {
     
     console.log("Mining block 2 ...");
     myBitcoin.addBlock(new Block(2, "12/07/2017", { amount: 10}));
-
     
     
     
