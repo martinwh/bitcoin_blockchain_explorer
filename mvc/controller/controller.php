@@ -77,6 +77,15 @@ class Controller {
 	{
 		$this->load->view('view_simple_message', $this->getBitcoinJSON());
 	}
+
+	// Method to read bitcoin exchange rates, this method will have an associated PHP method
+	// apiGetBitcoinExchangeRate() in the mvc/model folder
+	function apiGetBitcoinExchangeRate()
+	{
+		$data = $this->model->apiGetBitcoinExchangeRate();
+		echo json_encode($data);
+	}
+
     
 }
 ?>

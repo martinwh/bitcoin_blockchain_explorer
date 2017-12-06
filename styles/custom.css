@@ -44,9 +44,10 @@
         }
 
         h3.box_text_h3{
-            font-size: 25px;
+            font-size: 20px;
             color: #000;
             margin: 10px;
+            /* border: 1px solid red; */
         }
 
         h4.box_text_h4{
@@ -62,6 +63,18 @@
             color: #000;
             margin: 10px;
             float: left;
+            /* border: 1px solid red; */
+        }
+
+        .radio input[type=radio], .radio-inline input[type=radio], .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox] {
+            float: left;
+            margin-left: -10px;
+            margin-top: 9px;
+
+        }
+
+        .ccBtns{
+            margin: 10px;
             /* border: 1px solid red; */
         }
 

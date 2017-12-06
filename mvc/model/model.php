@@ -122,8 +122,8 @@ class Model {
 		$this->dbhandle->exec("DROP TABLE bitcoin_data");
 		return "Bitcoin data table successfully deleted from inside bitcoin.sqlite file";
 	}
-    
-	// Create a method to get Bitocin data using third party Bitcoin APIs — this is just a simple clump of Bitcoiun APIs calls in one method.
+	
+	// Create a method to get Bitcoin data using third party Bitcoin APIs — this is just a simple clump of Bitcoiun APIs calls in one method.
 	// Future updates will separate out disctinct API calls into separate methods for access by the controller class
     public function apiReadBitcoinData()
 	{
@@ -195,6 +195,44 @@ class Model {
             $result['bitcoin_data'][0]['amount'] = $tot_rec;
             $result['bitcoin_data'][0]['total_bitcoins'] = $total_bitcoins;
             
+		}
+		catch (PDOEXception $e) {
+			print new Exception($e->getMessage());
+		}
+		
+		//Send the response back to the view via the controller class
+		return $result;
+
+	}
+
+	// Create a method to get the current bitcoin values from varuious bitcoin exchange sites
+	public function apiGetBitcoinExchangeRate()
+	{
+		try {
+					
+			//Set up an array to return the results to the controller
+			$result = null;
+			
+			// Get the latest Bitcoin price from Bitfinex
+			$Bitfinex_Url = "https://api.bitfinex.com/v1/ticker/btcusd";
+			$json = json_decode(file_get_contents($Bitfinex_Url), true);
+			$priceBitfinex = $json["last_price"];
+
+			// Get the latest Bitcoin price from Bitstamp
+			$Bitstamp_Url = "https://www.bitstamp.net/api/ticker/";
+			$json = json_decode(file_get_contents($Bitstamp_Url), true);
+			$priceBitstamp = $json["last"];
+
+			// Get the latest Bitcoin price from Coinbase
+			$Coinbase_Url = "https://coinbase.com/api/v1/prices/spot_rate";
+			$json = json_decode(file_get_contents($Coinbase_Url), true);
+			$priceCoinbase = $json["amount"];
+			
+			//Write the Bitcoin to the results array for sending back to the view
+			$result['bitcoin_data'][0]['bitfinex_lp'] = $priceBitfinex;
+			$result['bitcoin_data'][0]['bitstamp_lp'] = $priceBitstamp;
+			$result['bitcoin_data'][0]['coinbase_lp'] = $priceCoinbase;
+	
 		}
 		catch (PDOEXception $e) {
 			print new Exception($e->getMessage());

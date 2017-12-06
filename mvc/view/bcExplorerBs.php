@@ -72,7 +72,8 @@
     <div id="accordion" role="tablist" aria-multiselectable="true">   
       
       <!-- Topics in Computer Science: Exploring the Bitcoin Blockchain-->
-      <!-- Set up a collapsible card presenting a MVC framework exmample--> 
+      <!-- Set up a collapsible card presenting a MVC framework example--> 
+      <!-- BLOCKCHAIIN TUTORIAL 1 — BUILD A MVC FRAMEWORK TO EXOLORE THE BITCOIN BLOCKCHAIN -->
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
             <div class="mb-0">
@@ -95,7 +96,8 @@
         </div> <!-- end the card collapse -->
       </div> <!-- end the card-->
 
-      <!-- Set up a collapsible card presenting a simple JavaScript blockchain example--> 
+      <!-- BLOCKCHAIIN TUTORIAL 2 — BUILD A BLOCKCHAIN IN JAVASCRIPT-->
+      <!-- Set up a collapsible card presenting a simple JavaScript blockchain example-->
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
             <div class="mb-0">
@@ -117,89 +119,153 @@
         </div> <!-- end the card collapse -->
       </div> <!-- end the card-->
       
-      <!-- Set up a collapsible card presenting Bitcoin echange rates --> 
+      <!-- BLOCKCHAIIN TUTORIAL 3 — BUILD A BLOCKCHAIN CURRENCY EXCHANGE WITH API ENDPOINTS-->
+      <!-- Set up a collapsible card presenting Bitcoin exchange rates --> 
       <div class="card">
-          <div class="card-header" role="tab" id="headingOne">
-              <div class="mb-0">
-                <!-- Make the div clickable using one of several ways:
-                     1) with 'a href', strictly speaking should use the 'a href' attribute together wrapped around the div in HTML5 (I think), but doing it this way means we would have to style away the default inline on the link. But, it has the advantage of making the whole div tag clickable.
-                     2) We also appear to be able to just use the a href to target the div collapse, but this might not be pucker, although it works also wth a p, and other element?
-                     3) Use the data-target attribute, which is simple and non-controvertial, I think?
-                 -->
-                <div class="section_3" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3"></div> 
-              </div>
-          </div>
-
-          <!-- Use the class="collapse in" to open the block in load -->
-          <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-            <div class="card-block">
-              <div class="row">
-                <div class="col-sm-4" style="background-color:lightgrey;">
-                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                  <!-- <img class="img-thumbnail" id="1" data-toggle="modal" data-target="#myModal" src="assets/images/image_1.jpg" alt="Part 1 WIP Image 1"> -->
-                  <div id="image_0" style="border:none" >Media object will insert here</div>
-                </div> <!-- End column -->
-                <div class="col-sm-4" style="background-color:lightgrey;">
-                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                  <div id="image_1" style="border:none" >Media object will insert here</div>
-                </div> <!-- End column -->
-                <div class="col-sm-4" style="background-color:lightgrey;">
-                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                  <div id="image_2" style="border:none" >Media object will insert here</div>
-                </div> <!-- End column -->
-              </div> <!--End image row -->             
-            
-              <div class="row">
-                <div class="col-sm-4" style="background-color:lavender;">
-                    <!-- Create title, subtitle and short descriptions as required -->
-                    <div class="title_0"></div> 
-                    <div class="subTitle_0"></div> 
-                    <div class="row"> 
-                        <div class="col-sm-8" style="background-color:lightcyan;"> 
-                            <div class="description_0"></div>
-                        </div>
-                        <div class="col-sm-4" style="background-color:lightgray;"> 
-                            <div id="bitfinex_lp"></div>
-                            <!-- <a href="#" class="btn btn-danger">Download</a> --> 
-                        </div>
-                    </div> <!-- end row -->
-                </div> <!-- end column -->
-                
-                <div class="col-sm-4" style="background-color:lavender;">
-                    <!-- Create title, subtitle and short descriptions as required -->
-                    <div class="title_1"></div> 
-                    <div class="subTitle_1"></div>  
-                    <div class="row"> 
-                        <div class="col-sm-8" style="background-color:lightcyan;">      
-                            <div class="description_1"></div>  
-                        </div>
-                        <div class="col-sm-4" style="background-color:lightgray;">      
-                            <div id="bitstamp_lp"></div>
-                            <!-- <a href="#" class="btn btn-danger">Download</a> -->
-                        </div>
-                    </div>
-                </div> <!-- end column -->
-                
-                <div class="col-sm-4" style="background-color:lavender;">
-                    <!-- Create title, subtitle and short descriptions as required -->
-                    <div class="title_2"></div> 
-                    <div class="subTitle_2"></div>  
-                    <div class="row">
-                        <div class="col-sm-8" style="background-color:lightcyan;">     
-                            <div class="description_2"></div> 
-                        </div>
-                        <div class="col-sm-4" style="background-color:lightgray;">     
-                          <div id="coinbase_lp"></div> 
-                            <!-- <a href="#" class="btn btn-danger">Download</a> -->
-                        </div>
+          <form action="">  
+              <div class="card-header" role="tab" id="headingOne">
+                  <div class="mb-0">
+                    <!-- Make the div clickable using one of several ways:
+                        1) with 'a href', strictly speaking should use the 'a href' attribute together wrapped around the div in HTML5 (I think), but doing it this way means we would have to style away the default inline on the link. But, it has the advantage of making the whole div tag clickable.
+                        2) We also appear to be able to just use the a href to target the div collapse, but this might not be pucker, although it works also wth a p, and other element?
+                        3) Use the data-target attribute, which is simple and non-controvertial, I think?
+                    -->
+                    <div class="section_3" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3"></div> 
                   </div>
-                </div> <!-- end column -->
-              </div> <!-- end title and sub-title row -->   
+              </div>
 
-            </div> <!-- end the panel body -->
-          </div> <!-- end the panel collapse -->
+              <!-- Use the class="collapse in" to open the block in load -->
+              <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                      <!-- Currency convertor title and instructions -->
+                      <div class="row">
+                          <div class="col-sm-6">  
+                            <h3 class="box_text_h3">Currency Convertor: Select Exchange Rate:</h3>
+                          </div>  
+                      </div>
+                      <!--Set up row to hold currency exchange logos -->
+                      <div class="row">
+                        <div class="col-sm-4" style="background-color:lightgrey;">
+                          <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
+                          <!-- <img class="img-thumbnail" id="1" data-toggle="modal" data-target="#myModal" src="assets/images/image_1.jpg" alt="Part 1 WIP Image 1"> 
+                          <div id="image_0" style="border:none" >Media object will insert here</div> -->
+                        </div> <!-- End column -->
+                        <div class="col-sm-4" style="background-color:lightgrey;">
+                          <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
+                          <div id="image_1" style="border:none" >Media object will insert here</div> -->
+                        </div> <!-- End column -->
+                        <div class="col-sm-4" style="background-color:lightgrey;"> 
+                          <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal 
+                          <div id="image_2" style="border:none" >Media object will insert here</div> -->
+                        </div> <!-- End column -->
+                      </div> <!--End image row -->             
+                      
+                      <!-- Get the BTC exchange rates -->
+                      <div class="row">
+                          <!-- Select the exchange rate for the currency convertor -->
+                              <div class="col-sm-4" style="background-color:lavender;">
+                                  <!-- Create title, subtitle and short descriptions as required -->
+                                  <!-- This is not used -->
+                                  <div class="title_0"></div> 
+                                  <!-- Bitfinex Bitcoin Exchange -->
+                                  <div class="subTitle_0"></div> 
+                                  <div class="row"> 
+                                      <div class="col-sm-2"> 
+                                          <!-- Radio button to slect the exchange source -->
+                                          <label class="radio-inline">
+                                              <input type="radio" name="radioOptions" id="bitfinex" value="Bitfinex" checked>
+                                          </label>
+                                      </div>   
+                                      <div class="col-sm-6">  
+                                          <!-- Bitfinex Latest Bitcoin Price -->
+                                          <div class="description_0"></div>
+                                      </div>
+                                      <div class="col-sm-4" style="background-color:lightgray;"> 
+                                          <div id="bitfinex_lp"></div>
+                                          <!-- <a href="#" class="btn btn-danger">Download</a> --> 
+                                      </div>
+                                  </div> <!-- end row -->
+                              </div> <!-- end column -->
+                              
+                              <div class="col-sm-4" style="background-color:lavender;">
+                                  <!-- Create title, subtitle and short descriptions as required -->
+                                  <div class="title_1"></div> 
+                                  <div class="subTitle_1"></div>  
+                                  <div class="row"> 
+                                      <div class="col-sm-2">      
+                                          <label class="radio-inline">
+                                              <input type="radio" name="radioOptions" id="bitstamp" value="Bitstamp" >
+                                          </label>
+                                      </div>
+                                      <div class="col-sm-6">     
+                                          <div class="description_1"></div>   
+                                      </div>
+                                      <div class="col-sm-4" style="background-color:lightgray;">      
+                                          <div id="bitstamp_lp"></div>
+                                          <!-- <a href="#" class="btn btn-danger">Download</a> -->
+                                      </div>
+                                  </div>
+                              </div> <!-- end column -->
+                              
+                              <div class="col-sm-4" style="background-color:lavender;">
+                                  <!-- Create title, subtitle and short descriptions as required -->
+                                  <div class="title_2"></div> 
+                                  <div class="subTitle_2"></div>  
+                                  <div class="row">
+                                      <div class="col-sm-2">     
+                                          <label class="radio-inline">
+                                              <input type="radio" name="radioOptions" id="coinbase" value="Coinbase" >
+                                          </label>
+                                      </div>
+                                      <div class="col-sm-6">      
+                                          <div class="description_2"></div> 
+                                      </div>
+                                      <div class="col-sm-4" style="background-color:lightgray;">     
+                                        <div id="coinbase_lp"></div> 
+                                          <!-- <a href="#" class="btn btn-danger">Download</a> -->
+                                      </div>
+                                  </div>
+                              </div> <!-- end column -->
+                      </div> <!-- end title and sub-title row -->   
+
+                      <!-- Implement a bitcoin currency convertor -->
+                      <div class="row">
+                          <!-- Input the BTC value and use the same inout box to display the converted from USD to BTC rate-->
+                          <div class="col-sm-6">  
+                              <h4 class="box_text_h4">Enter BTC to convert to USD:</h4>
+                              <div class="input-group input-group-sm ccBtns">
+                                  <span class="input-group-addon" id="sizing-addon1">BTC</span>
+                                  <span class="input-group-addon" id="sizing-addon1">0.00</span>
+                                  <input type="text" class="form-control" id="btcValue" name="name" value="">
+                              </div>
+                              <div class="ccBtns">
+                                  <a href="#" class="btn btn-success btn-sm" id="btcInput" value="Submit">Submit</a>  
+                                  <a href="#" class="btn btn-danger btn-sm" id="btcReset" value="Reset">Reset</a> 
+                              </div>
+                          </div>
+                          <!-- Input the USD value and use the same input box to display the converted from BTC to USD rate-->
+                          <div class="col-sm-6"> 
+                              <h4 class="box_text_h4">Enter USD to convert to BTC:</h4>
+                              <div class="input-group input-group-sm ccBtns">
+                                  <span class="input-group-addon" id="sizing-addon1">USD</span>
+                                  <span class="input-group-addon" id="sizing-addon1">0.00</span>
+                                  <input type="text" class="form-control" id="usdValue" name="name" value="">
+                              </div>
+                              <div class="ccBtns">
+                                  <a href="#" class="btn btn-success btn-sm" id="usdInput" value="Submit">Submit</a>  
+                                  <a href="#" class="btn btn-danger btn-sm" id="usdReset" value="Reset">Reset</a>
+                              </div>
+                          </div> 
+                      </div> <!-- End usd input row -->
+
+                    
+                </div> <!-- end the panel body -->
+              </div> <!-- end the panel collapse -->
+          </form> <!-- end input for buttons-->
       </div> <!-- end the card -->
-        
+
+
+      <!-- BLOCKCHAIIN TUTORIAL 4 — EXPLORE THE BITCOIN BLOCKCHAIN WITH API ENDPOINTS-->  
       <!-- Set up a collapsible card presenting Bitcoin blockchain information using APIs --> 
       <div class="card">
           <div class="card-header" role="tab" id="headingTwo">
@@ -214,8 +280,8 @@
               <div class="row">               
                 
                 <div class="col-sm-3">
-                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                  <div id="image_3" style="border:none" >Media object will insert here</div>
+                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
+                  <div id="image_3" style="border:none" >Media object will insert here</div> -->
                   <div class="title_3"></div>
                   <div class="subTitle_3"></div>        
                   <div class="description_3"></div>
@@ -224,8 +290,8 @@
                 </div> 
 
                 <div class="col-sm-3">
-                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                  <div id="image_4" style="border:none" >Media object will insert here</div>
+                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
+                  <div id="image_4" style="border:none" >Media object will insert here</div> -->
                   <div class="title_4"></div>
                   <div class="subTitle_4"></div>        
                   <div class="description_4"></div>  
@@ -234,8 +300,8 @@
                 </div>
 
                 <div class="col-sm-3">
-                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                  <div id="image_5" style="border:none" >Media object will insert here</div>
+                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
+                  <div id="image_5" style="border:none" >Media object will insert here</div> -->
                   <div class="title_5"></div> 
                   <div class="subTitle_5"></div>        
                   <div class="description_5"></div> 
@@ -244,8 +310,8 @@
                 </div>
                 
                 <div class="col-sm-3">
-                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                  <div id="image_6" style="border:none" >Media object will insert here</div>
+                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
+                  <div id="image_6" style="border:none" >Media object will insert here</div> -->
                   <div class="title_6"></div> 
                   <div class="subTitle_6"></div>        
                   <div class="description_6"></div>
@@ -254,8 +320,8 @@
                 </div>
                 
                 <div class="col-sm-3">
-                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                  <div id="image_7" style="border:none" >Media object will insert here</div>
+                  <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
+                  <div id="image_7" style="border:none" >Media object will insert here</div> -->
                   <div class="title_7"></div>
                   <div class="subTitle_7"></div>        
                   <div class="description_7"></div> 
@@ -266,7 +332,8 @@
             </div> <!-- end the card block -->
           </div> <!-- end the card collapse -->
       </div> <!-- end the card-->
-    
+      
+      <!-- BLOCKCHAIIN TUTORIAL 5 — EXPLORE THE BITCOIN BLOCKCHAIN WITH WEBSOCKETS-->
       <!-- Set up a collapsible card presenting bitcoin blockchain information using Websockets--> 
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
@@ -281,8 +348,8 @@
             <div class="row">               
               
               <div class="col-sm-4">
-                <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal -->
-                <div id="image_8" style="border:none" >Media object will insert here</div>
+                <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
+                <div id="image_8" style="border:none" >Media object will insert here</div> -->
                 <div class="title_8"></div>
                 <div class="subTitle_8"></div>        
                  <div class="description_8"></div> 
@@ -295,6 +362,7 @@
         </div> <!-- end the card collapse -->
       </div> <!-- end the card-->
 
+      <!-- BLOCKCHAIIN TUTORIAL 6 — BUILD A SIMPLE BLOCKCHAIN EXPLORER WITH THE WEBCHAIN API-->
       <!-- Set up a collapsible card presenting Bitcoin blockchain information using Webchain APIs--> 
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
