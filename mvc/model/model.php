@@ -205,7 +205,7 @@ class Model {
 
 	}
 
-	// Create a method to get the current bitcoin values from varuious bitcoin exchange sites
+	// Create a method to get the current bitcoin values from various bitcoin exchange sites
 	public function apiGetBitcoinExchangeRate()
 	{
 		try {
