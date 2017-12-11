@@ -279,7 +279,7 @@
 
               <div class="row">               
                 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
                   <div id="image_3" style="border:none" >Media object will insert here</div> -->
                   <div class="title_3"></div>
@@ -289,7 +289,7 @@
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div> 
 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
                   <div id="image_4" style="border:none" >Media object will insert here</div> -->
                   <div class="title_4"></div>
@@ -299,7 +299,7 @@
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
                   <div id="image_5" style="border:none" >Media object will insert here</div> -->
                   <div class="title_5"></div> 
@@ -309,7 +309,7 @@
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div>
                 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
                   <div id="image_6" style="border:none" >Media object will insert here</div> -->
                   <div class="title_6"></div> 
@@ -319,7 +319,7 @@
                   <!-- <a href="#" class="btn btn-danger">Download</a> -->
                 </div>
                 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                   <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
                   <div id="image_7" style="border:none" >Media object will insert here</div> -->
                   <div class="title_7"></div>

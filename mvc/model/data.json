@@ -20,32 +20,32 @@
 		},
             {
                   "title": " ",
-                  "subTitle": "Current Block Height",		
-                  "description": "This is the last block in the bitcoin blockchain:",
+                  "subTitle": "Blockchain Height",		
+                  "description": "Last block in the bitcoin blockchain:",
                   "imageUrl": "../assets/images/image_4.jpg"
             },
             {
                   "title": " ",
-                  "subTitle": "Bits Transacted in this Block",		
-                  "description": "This is the number of bits transacted in the last bitcoin block",
+                  "subTitle": "Block Bits Transacted",		
+                  "description": "Bits transacted in block",
                   "imageUrl": "../assets/images/image_5.jpg"
             },
             {
                   "title": " ",
-                  "subTitle": "Miner Address in this Block",		
-                  "description": "This is the address of the miner that validated this bitcoin transaction",
+                  "subTitle": "Block Miner Address",		
+                  "description": "Miner that validated block",
                   "imageUrl": "../assets/images/image_6.jpg"
             },
             {
                   "title": " ",
-                  "subTitle": "Amount Received at this Miner Address",		
-                  "description": "This is the amount of Satoshi's held by the miner at this address",
+                  "subTitle": "Block Miner Satoshi",		
+                  "description": "Amount of Satoshi held by last block miner",
                   "imageUrl": "../assets/images/image_7.jpg"
 		},
 		{
                   "title": " ",
-                  "subTitle": "Total Bitcoins at this Miner Address",		
-                  "description": "This is the total value of bitcoins held by this miner at this address",
+                  "subTitle": "Block Miner Bitcoins",		
+                  "description": "Value of bitcoins held by block miner",
                   "imageUrl": "../assets/images/image_8.jpg"
             },
             {
