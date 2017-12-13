@@ -153,7 +153,7 @@ class Model {
             $json = json_decode(file_get_contents($BlockchainInfo_Url), true);
             $block_number = $json["height"];
             
-            // Let's also get the total bits transacted in the latest bitcoin block!
+            // Let's also get the difficulty target of the latest bitcoin block!
             // The following code is what we wrote last time,
             // except we changed the last variable from block to block_index.
             $latestBlock_url = "https://blockchain.info/latestblock";
@@ -161,12 +161,12 @@ class Model {
             $block_index = $json["block_index"];
 
             // Lets plug in the $block_index variable and get
-            // the total number of bits that were in the last block.
+            // the difficulty target of the last block. returned in compact hexadecimal format
             $block_url = "https://blockchain.info/block-index/$block_index?format=json";
             $json_block = json_decode(file_get_contents($block_url), true);
             $total_bits = $json_block["bits"];
             
-            // Let's dig in a little further and pull out the bitcoin address that received the block reward of 25 bitcoins for solving the block
+            // Let's dig in a little further and pull out the bitcoin address that received the block reward of 12.5 bitcoins for solving the block
             // Notice it's called "addr" and it's stored within the "out" array. And "out" is stored within the "tx" array.
             $miner_address = $json_block["tx"][0]["out"][0]["addr"];
             
@@ -183,7 +183,7 @@ class Model {
             
             // Convert to Bitcoins
             $tot_rec_con = $tot_rec / 100000000;
-            $total_bitcoins = number_format($tot_rec_con,2);
+            $total_bitcoins = number_format($tot_rec_con,8);
             
             //Write the Bitcoin to the results array for sending back to the view
             $result['bitcoin_data'][0]['bitfinex_lp'] = $priceBitfinex;
@@ -242,6 +242,139 @@ class Model {
 		return $result;
 
 	}
+
+	// Method to get block data from the latest bitcoin block
+    public function apiGetLatestBlockData()
+	{
+		try {
+					
+			// Set up an array to return the results to the view via the controller
+			$result = null;	
+
+			// Get the current block height, block index, has and timestamp of the latest bitcoin block!
+            $latest_block = "https://blockchain.info/latestblock?format=json";
+            $json = json_decode(file_get_contents($latest_block), true);
+			$block_hash = $json["hash"];
+			$block_time = $json["time"];
+			$block_index = $json["block_index"];
+			$block_height = $json["height"];
+			
+			// Get the block header data from the last block.
+			// Example, run this API endpoint in a browser and use '1650086' as the block_index
+            $block_last = "https://blockchain.info/block-index/$block_index?format=json";
+            $block_json = json_decode(file_get_contents($block_last), true);
+			// Pick off the required block header data
+		  //$block_hash = $json["hash"];
+			$block_ver = $block_json["ver"];
+			$block_prev_block = $block_json["prev_block"];
+			$block_mrkl_root = $block_json["mrkl_root"];
+			$block_time = $block_json["time"];
+			$block_bits = $block_json["bits"];
+			$block_difficulty = $block_json["bits"];
+			$block_fee = $block_json["fee"];
+			$block_nonce = $block_json["nonce"];
+			$block_n_tx = $block_json["n_tx"];
+			$block_size = $block_json["size"];
+			$block_block_index = $block_json["block_index"];
+			$block_main_chain = $block_json["main_chain"];
+		  //$block_height = $block_json["height"];
+			$block_received_time = $block_json["received_time"];
+			$block_relayed_by = $block_json["relayed_by"];
+            
+            //Write the block data to the results array for sending back to the controller
+			$result['bitcoin_data'][0]['block_hash'] = $block_hash;
+			$result['bitcoin_data'][0]['block_prev_block'] = $block_prev_block;			
+			$result['bitcoin_data'][0]['block_mrkl_root'] = $block_mrkl_root;	
+			$result['bitcoin_data'][0]['block_time'] = $block_time;
+			$result['bitcoin_data'][0]['block_bits'] = $block_bits;
+			$result['bitcoin_data'][0]['block_difficulty'] = $block_difficulty;
+			$result['bitcoin_data'][0]['block_fee'] = $block_fee;
+            $result['bitcoin_data'][0]['block_nonce'] = $block_nonce;
+            $result['bitcoin_data'][0]['block_n_tx'] = $block_n_tx;
+			$result['bitcoin_data'][0]['block_size'] = $block_size;	
+			$result['bitcoin_data'][0]['block_index'] = $block_index;
+            $result['bitcoin_data'][0]['block_main_chain'] = $block_main_chain;
+			$result['bitcoin_data'][0]['block_height'] = $block_height;
+			$result['bitcoin_data'][0]['block_received_time'] = $block_received_time;		
+			$result['bitcoin_data'][0]['block_relayed_by'] = $block_relayed_by;	
+			
+		}
+		catch (PDOEXception $e) {
+			print new Exception($e->getMessage());
+		}
+		
+		//Send the response back to the view via the controller class
+		return $result;
+
+	}
+
+	// Method to get data from the miner of the latest bitcoin block
+    public function apiGetLatestBlockMinerData()
+	{
+		try {	
+			// Set up an array to return the results to the view via the controller
+			$result = null;	
+			// Get the block_index from the latest block data
+            $latest_block = "https://blockchain.info/latestblock";
+			$json = json_decode(file_get_contents($latest_block), true);
+			$block_index = $json["block_index"];
+			// Get the last block data.
+			// Example, run this API endpoint in a browser and use '1650086' as the block_index
+            $block_last = "https://blockchain.info/block-index/$block_index?format=json";
+            $block_json = json_decode(file_get_contents($block_last), true);
+            // Get the miner address that received the bitcoin block reward for solving the block
+            // Notice it's called "addr" and it's stored within the "out" array. And "out" is stored within the "tx" array.
+            $block_miner_address = $block_json["tx"][0]["out"][0]["addr"];
+			$block_miner_value_satoshi = $block_json["tx"][0]["out"][0]["value"];
+			$btc_value = $block_miner_value_satoshi / 100000000;
+			$block_miner_value = number_format($btc_value,8);
+			// get the reward in BTC
+			$block_miner_fee_satoshi = $block_json["fee"];
+			$btc_fee = $block_miner_fee_satoshi / 100000000;
+			$block_miner_fee = number_format($btc_fee,8);
+			$block_miner_reward = $block_miner_value - $block_miner_fee;
+            // Get some miner data at that miner address
+            $block_miner = "https://blockchain.info/address/$block_miner_address?format=json";
+			$block_miner_json = json_decode(file_get_contents($block_miner), true);
+			// Miner data at the miner address
+			$block_miner_hash160 = $block_miner_json["hash160"];
+		  //$block_miner_address = $block_miner_json["address"];
+			$block_miner_n_tx = $block_miner_json["n_tx"];
+			$block_miner_total_received = $block_miner_json["total_received"];
+			$block_miner_total_sent = $block_miner_json["total_sent"];
+			$block_miner_final_balance = $block_miner_json["final_balance"];
+            // Convert to Bitcoins
+            $btc = $block_miner_final_balance / 100000000;
+			$block_miner_btc = number_format($btc,8);
+			// Convert to dollars using the Coinbase exchange spot rate
+			// Get the latest Bitcoin price from Coinbase
+			$Coinbase_Url = "https://coinbase.com/api/v1/prices/spot_rate";
+			$json = json_decode(file_get_contents($Coinbase_Url), true);
+			$priceCoinbase = $json["amount"];
+			$dollar = $block_miner_btc * $priceCoinbase;
+			$block_miner_dollar = number_format($dollar,2);
+            //Write the Bitcoin to the results array for sending back to the view
+			$result['bitcoin_data'][0]['block_miner_hash160'] = $block_miner_hash160;
+			$result['bitcoin_data'][0]['block_miner_address'] = $block_miner_address;
+			$result['bitcoin_data'][0]['block_miner_n_tx'] = $block_miner_n_tx;
+            $result['bitcoin_data'][0]['block_miner_total_received'] = $block_miner_total_received;
+            $result['bitcoin_data'][0]['block_miner_total_sent'] = $block_miner_total_sent;
+            $result['bitcoin_data'][0]['block_miner_final_balance'] = $block_miner_final_balance;
+			$result['bitcoin_data'][0]['block_miner_btc'] = $block_miner_btc;
+			$result['bitcoin_data'][0]['block_miner_dollar'] = $block_miner_dollar;
+			$result['bitcoin_data'][0]['block_miner_fee'] = $block_miner_fee;
+			$result['bitcoin_data'][0]['block_miner_value'] = $block_miner_value;
+			$result['bitcoin_data'][0]['block_miner_reward'] = $block_miner_reward;
+		}
+		catch (PDOEXception $e) {
+			print new Exception($e->getMessage());
+		}
+		
+		//Send the response back to the view via the controller class
+		return $result;
+	}
+
+
     
 }		
 ?>

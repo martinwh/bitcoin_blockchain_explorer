@@ -52,6 +52,7 @@
 
         h4.box_text_h4{
             font-size: 15px;
+            line-height: 1.5em;
             color: #000;
             margin: 10px;
             float: left;
@@ -59,10 +60,12 @@
 
         p.box_text_p{
             font-size: 12px;
-            line-height: 1.5;
+            line-height: 1.5em;
+            width: 90%;
             color: #000;
             margin: 10px;
             float: left;
+            word-wrap: break-word;
             /* border: 1px solid red; */
         }
 

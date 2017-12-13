@@ -78,7 +78,7 @@ echo "</p>";
 
 echo "<p>";
 
-// Let's get the total bits transacted in the latest bitcoin block!
+// Let's get the difficulty traget (bits) in the latest bitcoin block!
 // The following code is what we wrote last time,
 // except we changed the last variable from block to block_index.
 $latestBlock_url = "https://blockchain.info/latestblock";
@@ -86,7 +86,7 @@ $json = json_decode(file_get_contents($latestBlock_url), true);
 $block_index = $json["block_index"];
 
 // Lets plug in the $block_index variable and get
-// the total number of bits that were in the last block.
+// the difficulty target of last block.
 $block_url = "https://blockchain.info/block-index/$block_index?format=json";
 $json_block = json_decode(file_get_contents($block_url), true);
 $total_bits = $json_block["bits"];
@@ -95,10 +95,10 @@ echo "<b>Block number</b>: ";
 echo $block_number;
 echo " <b>has </b>";
 echo $total_bits;
-echo " <b>bits transacted in this block</b>";
+echo " <b>difficulty target for this block</b>";
 echo "</p>";
 
-// Let's dig in a little further and pull out the bitcoin address that received the block reward of 25 bitcoins for solving the block
+// Let's dig in a little further and pull out the bitcoin address that received the bitcoin block reward for solving the block
 // Notice it's called "addr" and it's stored within the "out" array. And "out" is stored within the "tx" array.
 $latestBlock_url = "https://blockchain.info/latestblock";
 $json = json_decode(file_get_contents($latestBlock_url), true);

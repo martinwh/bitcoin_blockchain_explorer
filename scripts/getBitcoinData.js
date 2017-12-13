@@ -7,17 +7,21 @@ $(document).ready(function() {
 	var url2 = '../index.php/getbitcoinjson';
 	var url3 = '../index.php/dbreadbitcoindata';
 	var url4 = '../index.php/apiGetBitcoinExchangeRate';
+	var url5 = '../index.php/apiGetLatestBlockData';
+	var url6 = '../index.php/apiGetLatestBlockMinerData';
 	var bitcoinExchange = "Bitfinex";
 
 	// Load the bitcoin data values into the front end view
 	apiBitcoinExchangeRate(objID);
-	dbBitcoinData(objID);	
+	dbBitcoinData(objID);
+	apiGetBlockData(objID);	
+	apiGetBlockMinerData(objID);	
 
 	// Function to get some bitcoin test values for the SQLite database
 	function dbBitcoinData(objID) {	
 	
  		//Read the JSON file as an AJAX request 
-		$.getJSON(url3, function(jsonObj) {
+		$.getJSON(url1, function(jsonObj) {
 		console.log(jsonObj);
 			//Assign the AJAX requested data in to appropriate <div> tag wrapped in HTML
 			//Start by making AJAX request for the selected object name and its description
@@ -26,14 +30,14 @@ $(document).ready(function() {
 			$('#coinbase_lp').html('<p class="box_text_p">' + '$' + jsonObj.bitcoin_data[objID].coinbase_lp + '</p>');
 			$('#current_block_height').html('<p class="box_text_p">' + jsonObj.bitcoin_data[objID].current_block_height + '</p>');
 			$('#bits_transacted').html('<p class="box_text_p">' + jsonObj.bitcoin_data[objID].bits_transacted + '</p>');
-			$('#miner_address').html('<p class="box_text_p">' + jsonObj.bitcoin_data[objID].miner_address + '</p>');
+			$('#miner_address').html('<p class="box_text_p">' + jsonObj.bitcoin_data[objID].miner_address+ '</p>');
 			$('#amount').html('<p class="box_text_p">' + jsonObj.bitcoin_data[objID].amount + '</p>');
 			$('#total_bitcoins').html('<p class="box_text_p">' + jsonObj.bitcoin_data[objID].total_bitcoins + '</p>');				
 
 		});
 	}
 
-	// Function to get a range of Bitcoin exchange rate values uisng last price API endpoints
+	// Function to get a range of Bitcoin exchange rate values using last price API endpoints
 	function apiBitcoinExchangeRate(objID) {	
 		
 		//Read the JSON file as an AJAX request 
@@ -44,6 +48,26 @@ $(document).ready(function() {
 			$('#bitfinex_lp').html('<p class="box_text_p">' + '$' + jsonObj.bitcoin_data[objID].bitfinex_lp + '</p>');
 			$('#bitstamp_lp').html('<p class="box_text_p">' + '$' + jsonObj.bitcoin_data[objID].bitstamp_lp + '</p>');
 			$('#coinbase_lp').html('<p class="box_text_p">' + '$' + jsonObj.bitcoin_data[objID].coinbase_lp + '</p>');
+
+		});
+	}
+
+	// Function to get latest bitcoin block header data
+	function apiGetBlockData(objID) {	
+		
+		//Read the JSON file as an AJAX request 
+		$.getJSON(url5, function(jsonObj) {
+		console.log(jsonObj);
+
+		});
+	}
+
+	// Function to get lates bitcoin block header data
+	function apiGetBlockMinerData(objID) {	
+		
+		//Read the JSON file as an AJAX request 
+		$.getJSON(url6, function(jsonObj) {
+		console.log(jsonObj);
 
 		});
 	}

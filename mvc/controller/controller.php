@@ -86,6 +86,21 @@ class Controller {
 		echo json_encode($data);
 	}
 
-    
+    // Method to get bitcoin last block data, this method will have an associated PHP method
+	// apiGetLatestBlockMinerBtc() in the mvc/model folder
+	function apiGetLatestBlockData()
+	{
+		$data = $this->model->apiGetLatestBlockData();
+		echo json_encode($data);
+	}
+
+	// Method to get bitcoin last block miner data, this method will have an associated PHP method
+	// apiGetLatestBlockMinerData() in the mvc/model folder
+	function apiGetLatestBlockMinerData()
+	{
+		$data = $this->model->apiGetLatestBlockMinerData();
+		echo json_encode($data);
+	}
+
 }
 ?>

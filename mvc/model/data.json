@@ -21,13 +21,13 @@
             {
                   "title": " ",
                   "subTitle": "Blockchain Height",		
-                  "description": "Last block in the bitcoin blockchain:",
+                  "description": "Latest block in the bitcoin blockchain:",
                   "imageUrl": "../assets/images/image_4.jpg"
             },
             {
                   "title": " ",
-                  "subTitle": "Block Bits Transacted",		
-                  "description": "Bits transacted in block",
+                  "subTitle": "Block Difficulty Target",		
+                  "description": "Difficulty target in compact hexadecimal format",
                   "imageUrl": "../assets/images/image_5.jpg"
             },
             {
@@ -39,13 +39,13 @@
             {
                   "title": " ",
                   "subTitle": "Block Miner Satoshi",		
-                  "description": "Amount of Satoshi held by last block miner",
+                  "description": "Amount of Satoshi received by last block miner",
                   "imageUrl": "../assets/images/image_7.jpg"
 		},
 		{
                   "title": " ",
                   "subTitle": "Block Miner Bitcoins",		
-                  "description": "Value of bitcoins held by block miner",
+                  "description": "Value of bitcoins received by block miner",
                   "imageUrl": "../assets/images/image_8.jpg"
             },
             {
