@@ -91,6 +91,9 @@
                 <h5>Select the Deamweaver BITCOIN_DW View</h5>
                 <a href="../index.php/bcexplorerdw" class="btn btn-danger">BITCOIN_DW</a></li>
               </div> 
+              <div class="col-sm-8">
+                <div class="section_1_text">If this text is not overridden, your back end code is fucked!</div>
+              </div> 
             </div> <!-- end the row -->
           </div> <!-- end the card block -->
         </div> <!-- end the card collapse -->
@@ -110,8 +113,8 @@
 
             <div class="row">               
               
-              <div class="col-sm-4">
-                <!-- Insert HTML for the view for the JavaScript blockcchain tutorial -->
+              <div class="col-sm-12">
+                <div class="section_2_text">If this text is not overridden, your back end code is fucked!</div>
               </div> 
 
             </div> <!-- end the row -->
@@ -344,14 +347,14 @@
 
             <div class="row">               
               
-              <div class="col-sm-4">
+              <div class="col-sm-8">
                 <!-- Make this asset a thumbnail image acting as a button to launch a larger image in a Bootstrap modal
                 <div id="image_8" style="border:none" >Media object will insert here</div> -->
                 <div class="title_8"></div>
                 <div class="subTitle_8"></div>        
                  <div class="description_8"></div> 
                  <div id="messages"></div>
-                <!-- <a href="#" class="btn btn-danger">Download</a> -->
+                 <!-- <a href="#" class="btn btn-danger">Download</a> -->
               </div> 
 
             </div> <!-- end the row -->
@@ -422,11 +425,11 @@
   <div class="footer">
     <div class="container-fluid">   
       <div class="navbar-text pull-left">
-        <p> &copy 2017 Topics in Computer Science — Blockchain Tutorials</p>
+        <div class="copyright"></div>
       </div>
       <div class="navbar-text pull-right">
-          <div class="name">Tutor Name</div>
-          <div class="email">Contact</div>
+          <div class="name"></div>
+          <div class="email"></div>
       </div>
     </div>
   </div> 

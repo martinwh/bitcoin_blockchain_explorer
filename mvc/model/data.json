@@ -51,7 +51,7 @@
             {
                   "title": " ",
                   "subTitle": "Bitcoin unconfirmed transaction values in real-time",		
-                  "description": "This is a real-time stream of latest bitcoin transaction values accessed using the bitcoin.info Websocket",
+                  "description": "This is a real-time stream of latest bitcoin unconfirmed transaction values accessed using the bitcoin.info Websocket",
                   "imageUrl": "../assets/images/image_8.jpg"
             },
             {
@@ -63,6 +63,15 @@
                   "section_6": "Blockchain Tutorial 6 — Build a Simple Blockchain Explorer with the Webchain API"
             },
             {
+                  "text_1": "Blockchain Tutorial 1 focuses on developing a simple MVC design pattern or framework in which to develop your blockchain tutorial code. So, the view you see now with the header, footer, and tutorial results sequenced in Bootsrap collapsible cards is the primary result of this Blockchain Tutorial 1. If you select the red BITCOIN_DW button on the left, this will simply take you to another earlier view. This is just to illustrate that, with an MVC framework, it is easy to swap out views.  From the BITCOIN_DW view you can navigate back to this 'Visualising Blockchain Transactions' view'",
+                  "text_2": "Blockchain Tutorial 2 is a JavaScript tutorial that simulates a simple blockchain. To run the JavaScript blockchain you will use a command line terminal. The Visual Studio Code editor integrates a command line terminal as well as integrating to GitHub, as such I recommend that you adopt this editor for these tutorials. Exercises recommended to follow up in this tutorial are 1) writing a simple front end to experiment with the blockchain simulation more easily than using the command line, and 2) to extend your front end to exploit the MVC framework with appropriate PHD controller and model methods with the SQLite database for local storage",
+                  "text_3": "",
+                  "text_4": "",
+                  "text_5": "",
+                  "text_6": ""
+            },
+            {
+                  "copyright": "&copy 2017 Topics in Computer Science — Blockchain Tutorials",
                   "name": "Dr Martin White",
                   "email": "m.white@sussex.ac.uk"		
 		}

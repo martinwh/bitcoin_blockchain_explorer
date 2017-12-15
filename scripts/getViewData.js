@@ -62,21 +62,36 @@ $(document).ready(function (){
         $('#image_8').html('<img class="img-thumbnail" id="1" data-toggle="modal" data-target="#myModal" src="' + jsonObj.pageTextData[8].imageUrl + '" alt=" WIP Image 8"/>');
 
 		// Get the section titles
-		// Blockchain — A simple JavaScript blockchain tutorial
+		// Blockchain Tutorial 1 — Build a MVC Framework to Explore the Bitcoin Blockchain
 		$('.section_1').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_1 + '</h2>');
-		// Blockchain — A simple JavaScript blockchain tutorial
+		// Blockchain Tutorial 2 — Build a Simple Blockchain in JavaScript
 		$('.section_2').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_2 + '</h2>');
-		// Blockchain — Explore bitcoin exchange APIs tutorial
+		// Blockchain Tutorial 3 — Build a Bitcoin Currency Exchange with API Endpoints
 		$('.section_3').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_3 + '</h2>');
-		// Blockchain — Explore the bitcoin blockchain with APIs
+		// Blockchain Tutorial 4 — Explore the bitcoin blockchain with API Endpoints
 		$('.section_4').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_4 + '</h2>');
-		// Blockchain — Explore the bitcoin blockchain with WebSockets
+		// Blockchain Tutorial 5 — Explore the bitcoin blockchain with WebSockets
 		$('.section_5').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_5 + '</h2>');
-		// Blockchain — Build a simple blockchain explorer tutorial
+		// Blockchain Tutorial 6— Build a simple blockchain explorer with the Webchain API
 		$('.section_6').html('<h2 class ="box_text_h2">' + jsonObj.pageTextData[9].section_6 + '</h2>');
 		
-		// Get the Assignment footer information, name, candidate number and statement of orginality
-		$('.name').html('<p class="p.box_text_p">' + jsonObj.pageTextData[10].name + '</p>');
-		$('.email').html('<p>' + jsonObj.pageTextData[10].email + '</p>');
+		// Get the section texts
+		// Blockchain Tutorial 1 — Text
+		$('.section_1_text').html('<p class="box_text_p">' + jsonObj.pageTextData[10].text_1 + '</p>');
+		// Blockchain Tutorial 2 — Text
+		$('.section_2_text').html('<p class="box_text_p">' + jsonObj.pageTextData[10].text_2 + '<p>');
+		// Blockchain Tutorial 3 — Text
+		$('.section_3_text').html('<p class="box_text_p">' + jsonObj.pageTextData[10].text_3 + '<p>');
+		// Blockchain Tutorial 4 — Text
+		$('.section_4_text').html('<p class="box_text_p">' + jsonObj.pageTextData[10].text_4 + '<p>');
+		// Blockchain Tutorial 5 — Text
+		$('.section_5_text').html('<p class="box_text_p">' + jsonObj.pageTextData[10].text_5 + '<p>');
+		// Blockchain Tutorial 6 — Text
+		$('.section_6_text').html('<p class="box_text_p">' + jsonObj.pageTextData[10].text_6 + '<p>');
+
+		// Get the footer information, e.g. name, email
+		$('.copyright').html('<p>' + jsonObj.pageTextData[11].copyright + '</p>');
+		$('.name').html('<p>' + jsonObj.pageTextData[11].name + '</p>');
+		$('.email').html('<p>' + jsonObj.pageTextData[11].email + '</p>');
 	})
 });

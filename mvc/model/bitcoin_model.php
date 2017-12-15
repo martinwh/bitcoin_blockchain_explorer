@@ -161,25 +161,4 @@ echo "</p>";
 echo "</br><br>";
 echo "</br><br>";
 
-
-
-// Lesson #5 - Introduction to Web Sockets
-// Introduces how to use the blockchain.info Websocket API o you can get real-time information 
-// on new transactions and new blocks as they happen.
-// Watch the video: https://btcthreads.com/display-real-time-bitcoin-transactions-with-jquery-and-websocket/
-// Here's the code:
-echo "<p>";
-echo "<b>Lesson #5: Let's use the blockchain.info Websocket API to access in real-time blockchain transation information!</b>";
-echo "</p>";
-
-
-// Lesson #6 - How to make a Block Explorer with Chain.com API
-// This lesson shows you how to build a Block Explorere with the Chain.com API 
-// Watch the video: https://btcthreads.com/how-to-make-a-block-explorer-with-chain-com-api/
-// Here's the code:
-echo "<p>";
-echo "<b>Lesson #6: Let's Let's build a Block Explorer with the Chain.com API!</b>";
-echo "</p>";
-
-
 ?>
