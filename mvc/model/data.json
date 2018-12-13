@@ -60,7 +60,7 @@
                   "section_3": "Blockchain Tutorial 3 — Build a Bitcoin Currency Exchange with API Endpoints",
                   "section_4": "Blockchain Tutorial 4 — Explore the Bitcoin Blockchain with API Endpoints",
                   "section_5": "Blockchain Tutorial 5 — Explore the Bitcoin Blockchain with WebSockets",
-                  "section_6": "Blockchain Tutorial 6 — Build a Simple Blockchain Explorer with the Webchain API"
+                  "section_6": "Blockchain Tutorial 6 — Explore the Tether Blockchain with the Omni API"
             },
             {
                   "text_1": "Blockchain Tutorial 1 focuses on developing a simple MVC design pattern or framework in which to develop your blockchain tutorial code. So, the view you see now with the header, footer, and tutorial results sequenced in Bootsrap collapsible cards is the primary result of this Blockchain Tutorial 1. If you select the red BITCOIN_DW button on the left, this will simply take you to another earlier view. This is just to illustrate that, with an MVC framework, it is easy to swap out views.  From the BITCOIN_DW view you can navigate back to this 'Visualising Blockchain Transactions' view'",

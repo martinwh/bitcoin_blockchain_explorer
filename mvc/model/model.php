@@ -143,10 +143,12 @@ class Model {
             $priceBitstamp = $json["last"];
 
             // Get the latest Bitcoin price from Coinbase
-            $Coinbase_Url = "https://coinbase.com/api/v1/prices/spot_rate";
+			//$Coinbase_Url = "https://coinbase.com/api/v1/prices/spot_rate";
+			$Coinbase_Url = "https://api.bitfinex.com/v1/ticker/btcusd";
             $json = json_decode(file_get_contents($Coinbase_Url), true);
-            $priceCoinbase = $json["amount"];
-            
+            //$priceCoinbase = $json["amount"];
+			$priceCoinbase  = $json["last_price"];
+			
             //Get the current block height, i.e. the latest block number, which is mined every 10 minutes or so and added to the 
             //bitcoin blockchain. Height is fetched using the blockchain.inf 'lastestblock' API call
             $BlockchainInfo_Url = "https://blockchain.info/latestblock";
@@ -224,9 +226,9 @@ class Model {
 			$priceBitstamp = $json["last"];
 
 			// Get the latest Bitcoin price from Coinbase
-			$Coinbase_Url = "https://coinbase.com/api/v1/prices/spot_rate";
+			$Coinbase_Url = "https://api.bitfinex.com/v1/ticker/btcusd";
 			$json = json_decode(file_get_contents($Coinbase_Url), true);
-			$priceCoinbase = $json["amount"];
+			$priceCoinbase = $json["last_price"];
 			
 			//Write the Bitcoin to the results array for sending back to the view
 			$result['bitcoin_data'][0]['bitfinex_lp'] = $priceBitfinex;
