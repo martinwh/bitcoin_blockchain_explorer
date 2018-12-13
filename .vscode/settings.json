@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/_notes": true,
+        "**/._*": true
+    }
+}
