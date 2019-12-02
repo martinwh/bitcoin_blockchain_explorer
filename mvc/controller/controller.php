@@ -3,6 +3,7 @@
 class Controller {
 	public $load;
 	public $model;
+
 	// Create functions (methods) for the controller class
 	function __construct($pageURI = null) // contructor of the class
 	{
@@ -100,6 +101,13 @@ class Controller {
 	{
 		$data = $this->model->apiGetLatestBlockMinerData();
 		echo json_encode($data);
+	}
+
+	// Method to get test Tehther data in JSON format
+	function apiGetJsonTetherData()
+	{
+		$data = $this->model->apiTestTetherData();
+		echo $data;
 	}
 
 }

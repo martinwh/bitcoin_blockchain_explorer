@@ -340,7 +340,7 @@ class Model {
 			$block_miner_json = json_decode(file_get_contents($block_miner), true);
 			// Miner data at the miner address
 			$block_miner_hash160 = $block_miner_json["hash160"];
-		  //$block_miner_address = $block_miner_json["address"];
+		  	//$block_miner_address = $block_miner_json["address"];
 			$block_miner_n_tx = $block_miner_json["n_tx"];
 			$block_miner_total_received = $block_miner_json["total_received"];
 			$block_miner_total_sent = $block_miner_json["total_sent"];
@@ -350,9 +350,10 @@ class Model {
 			$block_miner_btc = number_format($btc,8);
 			// Convert to dollars using the Coinbase exchange spot rate
 			// Get the latest Bitcoin price from Coinbase
-			$Coinbase_Url = "https://coinbase.com/api/v1/prices/spot_rate";
+			//$Coinbase_Url = "https://coinbase.com/api/v1/prices/spot_rate";
+			$Coinbase_Url = "https://api.bitfinex.com/v1/ticker/btcusd";
 			$json = json_decode(file_get_contents($Coinbase_Url), true);
-			$priceCoinbase = $json["amount"];
+			$priceCoinbase = $json["last_price"];
 			$dollar = $block_miner_btc * $priceCoinbase;
 			$block_miner_dollar = number_format($dollar,2);
             //Write the Bitcoin to the results array for sending back to the view
@@ -376,8 +377,233 @@ class Model {
 		return $result;
 	}
 
-
-    
+	public function apiTestTetherData()
+	{
+		try{
+			return'{
+				"address": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+				"current_page": 0, 
+				"pages": 10285, 
+				"transactions": [
+				  {
+					"amount": "99994.00000000", 
+					"block": 569069, 
+					"blockhash": "00000000000000000009d3a57f42fda2d689ebd9436abfd5d43741c58df654a6", 
+					"blocktime": 1553719520, 
+					"confirmations": 4, 
+					"divisible": true, 
+					"fee": "0.00025700", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 46, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "15QRmn2VEHEpoN89RH2y4c8N5NgpVBptzv", 
+					"sendingaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"txid": "0a8b506e92875ba186f1c67da4a80965625962c8608ff9e2759e5beb714b64c5", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "30337.30000000", 
+					"block": 569066, 
+					"blockhash": "0000000000000000000f2696d3aa6c24d44fff0bf839fb1cb0508854577d8faf", 
+					"blocktime": 1553717840, 
+					"confirmations": 7, 
+					"divisible": true, 
+					"fee": "0.00025500", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 131, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "3CyQPBEDSk6ZmEsynD2ZAFyRF77cte6bd4", 
+					"sendingaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"txid": "5922f9ea7a2e09805625053503a199c50dc4035d8515412a3da1a6f28193d0df", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "700.00000000", 
+					"block": 569058, 
+					"blockhash": "0000000000000000001a05b09c11e9ecd0fdaa19e87bd97198bcf57576da1862", 
+					"blocktime": 1553713361, 
+					"confirmations": 15, 
+					"divisible": true, 
+					"fee": "0.00025700", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 41, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"sendingaddress": "1CviF1LXnFtL479VBop1zQzxV1512WkQUU", 
+					"txid": "34c1c27821adc29561e9fe32c95c706dc3ddb13ffcb78a017336e219c0ec9f81", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "29684.10934436", 
+					"block": 569058, 
+					"blockhash": "0000000000000000001a05b09c11e9ecd0fdaa19e87bd97198bcf57576da1862", 
+					"blocktime": 1553713361, 
+					"confirmations": 15, 
+					"divisible": true, 
+					"fee": "0.00025700", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 39, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"sendingaddress": "12HsT2WgL9bm7Dhx4Q7RGN44LkQWRGyoQV", 
+					"txid": "8ec48e73fad4c5f86046ff452b56ab8f0a8e6626eba14dd5837b4c769914e534", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "100.00000000", 
+					"block": 569056, 
+					"blockhash": "0000000000000000002499d1e342e42d3391c58b3cd218927e08784b5ca3c911", 
+					"blocktime": 1553712348, 
+					"confirmations": 17, 
+					"divisible": true, 
+					"fee": "0.00025600", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 96, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"sendingaddress": "1CviF1LXnFtL479VBop1zQzxV1512WkQUU", 
+					"txid": "4e92e9bc7107640c071b581032ce5ecf60fb94c573093749b4afad8ff9d243ff", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "24995.00000000", 
+					"block": 569056, 
+					"blockhash": "0000000000000000002499d1e342e42d3391c58b3cd218927e08784b5ca3c911", 
+					"blocktime": 1553712348, 
+					"confirmations": 17, 
+					"divisible": true, 
+					"fee": "0.00025700", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 89, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "13rTJT6W2irLh18y2Q6ge8fayV3UTSBJ7N", 
+					"sendingaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"txid": "a240547885b61d0a96c02f203e6857284e30becf150f275d8ded587aa251f4d8", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "8838.00000000", 
+					"block": 569056, 
+					"blockhash": "0000000000000000002499d1e342e42d3391c58b3cd218927e08784b5ca3c911", 
+					"blocktime": 1553712348, 
+					"confirmations": 17, 
+					"divisible": true, 
+					"fee": "0.00025700", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 88, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"sendingaddress": "13aXbWEfiDNzWGqsiX6DfXNGqptT6KZULm", 
+					"txid": "b631453a1554392ec95715dc09c4dada04835bc0c9bc65d61d07ae761ff68b60", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "80998.00000000", 
+					"block": 569054, 
+					"blockhash": "0000000000000000001427528180fab8af78d042f784ca1220b5bddb7124a384", 
+					"blocktime": 1553711007, 
+					"confirmations": 19, 
+					"divisible": true, 
+					"fee": "0.00025600", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 113, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"sendingaddress": "1FsdpECDumfW6mwtLhs9L3CuRWgUa4T3BR", 
+					"txid": "f1f24981fde12680b45877352a8feffc6d1fdf70806a914fc7761fabf5249538", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "79996.00000000", 
+					"block": 569054, 
+					"blockhash": "0000000000000000001427528180fab8af78d042f784ca1220b5bddb7124a384", 
+					"blocktime": 1553711007, 
+					"confirmations": 19, 
+					"divisible": true, 
+					"fee": "0.00025700", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 105, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"sendingaddress": "1H5SKkaarYKcP6CykoGCXeGn8vhZaBCddJ", 
+					"txid": "ee06cd4f3b389ac1d76f580a76b8661e0abc8dc00ae914bba5e088901f6c998f", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }, 
+				  {
+					"amount": "100.00000000", 
+					"block": 569054, 
+					"blockhash": "0000000000000000001427528180fab8af78d042f784ca1220b5bddb7124a384", 
+					"blocktime": 1553711007, 
+					"confirmations": 19, 
+					"divisible": true, 
+					"fee": "0.00025700", 
+					"flags": null, 
+					"ismine": false, 
+					"positioninblock": 104, 
+					"propertyid": 31, 
+					"propertyname": "TetherUS", 
+					"referenceaddress": "1KYiKJEfdJtap9QX2v9BXJMpz2SfU4pgZw", 
+					"sendingaddress": "1CviF1LXnFtL479VBop1zQzxV1512WkQUU", 
+					"txid": "e95d2ab8ee6a7a88b42ec6e7a4ebce1143ee25d25178d2746bdc75f44334633e", 
+					"type": "Simple Send", 
+					"type_int": 0, 
+					"valid": true, 
+					"version": 0
+				  }
+				]
+			  }';
+		}
+		catch (PDOEXception $e) {
+			print new Exception($e->getMessage());
+		}
+  		
+	}
+ 
 }		
 ?>
 		

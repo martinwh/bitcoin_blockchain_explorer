@@ -384,6 +384,7 @@
                 <div class="subTitle_3"></div>        
                 <div class="description_3"></div>  -->
                 <!-- <a href="#" class="btn btn-danger">Download</a> -->
+                <p> Tether Data will be inserted here </p>
               </div> 
 
             </div> <!-- end the row -->

@@ -11,12 +11,29 @@ $(document).ready(function() {
 	var url6 = '../index.php/apiGetLatestBlockMinerData';
 	var bitcoinExchange = "Bitfinex";
 
+	var urlTether = '../index.php/apiGetJsonTetherData';
+
 	// Load the bitcoin data values into the front end view
 	apiBitcoinExchangeRate(objID);
 	dbBitcoinData(objID);
 	apiGetBlockData(objID);	
 	apiGetBlockMinerData(objID);	
 
+	// Playing with Tether
+	apiGetTether(objID)
+
+	// Function to get some bitcoin test values for the SQLite database
+	function apiGetTether(objID) {	
+
+		//Read the JSON file as an AJAX request 
+		$.getJSON(urlTether, function(jsonObj) {
+		console.log(jsonObj);
+			// Write the handler ...			
+
+		});
+	}
+	
+	
 	// Function to get some bitcoin test values for the SQLite database
 	function dbBitcoinData(objID) {	
 	
