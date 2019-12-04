@@ -1,16 +1,16 @@
 // JavaScript Blockchain
 const SHA256 = require('./node_modules/crypto-js/sha256');
 
-class Block{
+class Block {
     // Constructor to hold the block properties of the blockchain, such as: index (a blockchain id), 
     // timestamp (when the block was appended), transaction data (e.g. bitcoins transacted), previoushash
     // of the previous block
-    constructor(index, timestamp, data, previoushash = ''){
+    constructor(index, timestamp, data, previousHash =''){
         // Keep track of all these block properties
         this.index = index;
         this.timestamp = timestamp;
         this.data = data;
-        this.previoushash = previoushash;
+        this.previousHash = previousHash;
         // We also need to calculate the hash of the current block
         this.hash = this.calculateHash();
         this.nonce = 0;
@@ -20,27 +20,29 @@ class Block{
     calculateHash(){
         // Note, we are accessing the constructor index, previoushas, timestamp and data values
         // We are also converting the javaScript data to a JSON string, and casting the hash result to a string.
-        return SHA256(this.index + this.previoushash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
+        return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
         
     }
 
-    // Method to mine a block by computing the hash value that matchses the requirequred difficulty level
+    // Method to mine a block by computing the hash value that matches the requirequred difficulty level
     mineBlock(difficulty){
         // We need a while loop to continue computing the hash value until we find a value that has the required
         // number of leading zeros. To do this we keep loopong while the leading hash value characters from 0 to difficulty
         // are not zeros
         while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
-            // Increment the nonce value to create a new randim number each time we loop
+            // Increment the nonce value to create a new random number each time we loop
             this.nonce++;
+            // Interesting to see that the Nonce is simply a number incremented to seed the calculatehash() method.
+            // This gives you a visual of the loop, i.e. the work being done — Proof of Work
+            // Don't look at the output if difficulty level set high, for example setting to 5 
+            // creates 1,921,423 guesses for the 1st block and 1,085,645 guesses for the 2nd block, these are then printed to the 
+            // screen slowing the loop down further.
+          //console.log("Nonce value: " + this.nonce);
             // Calculate the hash of the current block being mined
             this.hash = this.calculateHash();
         }
-
         console.log("Block mined: " + this.hash);
-
     }
-
-
 }
 
 // A new class for the blockchain
@@ -53,7 +55,7 @@ class Blockchain {
         this.difficulty = 5;
     }
 
-    // Method to create the first block in the blockchain, i.e. the Gnesis block
+    // Method to create the first block in the blockchain, i.e. the Genesis block
     createGenesisBlock(){
         // Obvioisly, the index is zero, a date, some data, and there is no previousHash, so just set this to 0
         return new Block(0, "01/01/2017", "Genesis block", "0"); 
@@ -72,7 +74,7 @@ class Blockchain {
         // Need to find the previousHash of the previous block, so use the getLatestBlock() method
         newBlock.previousHash = this.getLatestBlock().hash;
         // Calculate the new block's hash — Part 1 of Blockchain Turorial 2
-        // newBlock.hash = newBlock.calculateHash();
+      //newBlock.hash = newBlock.calculateHash();
         // Calculate the mined block — Part 2 of Blockchain Turorial 2
         newBlock.mineBlock(this.difficulty);
         // And, add the new block to the blockchain
@@ -116,22 +118,21 @@ class Blockchain {
     console.log("Mining block 2 ...");
     myBitcoin.addBlock(new Block(2, "12/07/2017", { amount: 10}));
     
-    
-    
     // Test the isChainValid() method
-    //console.log('Is blockchain valid? ' + myBitcoin.isChainValid());
+    console.log('Is blockchain valid? ' + myBitcoin.isChainValid());
 
     // Tamper with block 2 by overwriting the data, e.g. transfer 100 coins, make ourselves rich!
-    //myBitcoin.chain[1].data = { amount: 100 };
+  //myBitcoin.chain[1].data = { amount: 100 };
+    
     // Just tampering with block 2 by overwriting the data didn't work, we got rumbled,
     // so let's recalculate and inject a new hash value!
-    //myBitcoin.chain[1].hash = myBitcoin.chain[1].calculateHash();
+  //myBitcoin.chain[1].hash = myBitcoin.chain[1].calculateHash();
 
     // Test the isChainValid() method, again
-    //console.log('Is blockchain valid? ' + myBitcoin.isChainValid());
+ //console.log('Is blockchain valid? ' + myBitcoin.isChainValid());
    
     // View the result as a JSON string using console.log() in JSON format
-    //console.log(JSON.stringify(myBitcoin, null, 4));
+    console.log(JSON.stringify(myBitcoin, null, 4));
 
 
 

@@ -280,8 +280,8 @@ class Model {
 			$block_block_index = $block_json["block_index"];
 			$block_main_chain = $block_json["main_chain"];
 		  //$block_height = $block_json["height"];
-			$block_received_time = $block_json["received_time"];
-			$block_relayed_by = $block_json["relayed_by"];
+		  //$block_received_time = $block_json["received_time"];
+		  //$block_relayed_by = $block_json["relayed_by"];
             
             //Write the block data to the results array for sending back to the controller
 			$result['bitcoin_data'][0]['block_hash'] = $block_hash;
@@ -297,8 +297,8 @@ class Model {
 			$result['bitcoin_data'][0]['block_index'] = $block_index;
             $result['bitcoin_data'][0]['block_main_chain'] = $block_main_chain;
 			$result['bitcoin_data'][0]['block_height'] = $block_height;
-			$result['bitcoin_data'][0]['block_received_time'] = $block_received_time;		
-			$result['bitcoin_data'][0]['block_relayed_by'] = $block_relayed_by;	
+		  //$result['bitcoin_data'][0]['block_received_time'] = $block_received_time;		
+		  //$result['bitcoin_data'][0]['block_relayed_by'] = $block_relayed_by;	
 			
 		}
 		catch (PDOEXception $e) {
