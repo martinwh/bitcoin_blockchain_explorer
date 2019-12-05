@@ -1,5 +1,5 @@
 // JavaScript Blockchain
-const SHA256 = require('./node_modules/crypto-js/sha256');
+const SHA256 = require('crypto-js/sha256');
 
 class Block {
     // Constructor to hold the block properties of the blockchain, such as: index (a blockchain id), 
